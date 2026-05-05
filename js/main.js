@@ -277,6 +277,86 @@ if (productModal) {
 }
 
 // =======================================
+// CATALOGO: filtros + buscador
+// =======================================
+const catalogoControls = document.querySelector('.catalogo-controls');
+if (catalogoControls) {
+  const filters = document.querySelectorAll('.catalogo-filter');
+  const searchInput = document.getElementById('catalogoSearch');
+  const emptyEl = document.getElementById('catalogoEmpty');
+  const aerosolesSection = document.getElementById('aerosoles');
+  const tapetesSection = document.getElementById('tapetes');
+  const categories = document.querySelectorAll('.catalogo__category');
+  const allCards = document.querySelectorAll('.aroma-card');
+
+  let currentFilter = 'all';
+
+  function applyFilters() {
+    const term = (searchInput.value || '').trim().toLowerCase();
+    let visibleCount = 0;
+
+    // Section visibility based on filter
+    if (currentFilter === 'aerosoles') {
+      aerosolesSection.classList.remove('catalogo-section--hidden');
+      tapetesSection.classList.add('catalogo-section--hidden');
+    } else if (currentFilter === 'tapetes') {
+      aerosolesSection.classList.add('catalogo-section--hidden');
+      tapetesSection.classList.remove('catalogo-section--hidden');
+    } else {
+      aerosolesSection.classList.remove('catalogo-section--hidden');
+      tapetesSection.classList.remove('catalogo-section--hidden');
+    }
+
+    // Card-level search
+    allCards.forEach(card => {
+      const inHiddenSection =
+        (currentFilter === 'aerosoles' && tapetesSection.contains(card)) ||
+        (currentFilter === 'tapetes' && aerosolesSection.contains(card));
+
+      if (inHiddenSection) {
+        card.classList.add('aroma-card--hidden');
+        return;
+      }
+
+      if (!term) {
+        card.classList.remove('aroma-card--hidden');
+        visibleCount++;
+        return;
+      }
+
+      const name = (card.querySelector('.aroma-card__name')?.textContent || '').toLowerCase();
+      const desc = (card.querySelector('.aroma-card__desc')?.textContent || '').toLowerCase();
+      const badge = (card.querySelector('.fragancia-card__badge')?.textContent || '').toLowerCase();
+      const match = name.includes(term) || desc.includes(term) || badge.includes(term);
+
+      card.classList.toggle('aroma-card--hidden', !match);
+      if (match) visibleCount++;
+    });
+
+    // Hide categories with no visible cards
+    categories.forEach(cat => {
+      const hasVisible = cat.querySelectorAll('.aroma-card:not(.aroma-card--hidden)').length > 0;
+      cat.classList.toggle('catalogo__category--empty', !hasVisible);
+    });
+
+    if (emptyEl) emptyEl.hidden = visibleCount > 0;
+  }
+
+  filters.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filters.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.filter;
+      applyFilters();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilters);
+  }
+}
+
+// =======================================
 // LAUNCH ANIMATIONS ON LOAD
 // =======================================
 if (document.readyState === 'loading') {

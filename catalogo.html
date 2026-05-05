@@ -42,6 +42,25 @@
     </div>
   </section>
 
+  <!-- CONTROLES: filtros + buscador -->
+  <section class="catalogo-controls" data-animate="fade-up">
+    <div class="container catalogo-controls__inner">
+      <div class="catalogo-filters" role="tablist" aria-label="Filtrar por tipo">
+        <button type="button" class="catalogo-filter active" data-filter="all">Todos</button>
+        <button type="button" class="catalogo-filter" data-filter="aerosoles">Aerosoles</button>
+        <button type="button" class="catalogo-filter" data-filter="tapetes">Tapetes</button>
+      </div>
+      <div class="catalogo-search">
+        <svg class="catalogo-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="search" id="catalogoSearch" class="catalogo-search__input" placeholder="Buscar por aroma (ej: lavender, citrus)..." aria-label="Buscar producto">
+      </div>
+    </div>
+    <p class="catalogo-empty" id="catalogoEmpty" hidden>No encontramos productos que coincidan con tu búsqueda.</p>
+  </section>
+
   <!-- CATÁLOGO AEROSOLES -->
   <section class="catalogo section" id="aerosoles">
     <div class="container">

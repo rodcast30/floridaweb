@@ -1212,6 +1212,114 @@ a.contacto__info-value:hover { color: var(--orange); }
 
 .catalogo-tapetes { background: var(--off-white); }
 
+/* ===== CATALOGO CONTROLES ===== */
+.catalogo-controls {
+  padding: 0 0 1rem;
+  position: sticky;
+  top: 92px;
+  z-index: 50;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(14px);
+}
+
+.catalogo-controls__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.catalogo-filters {
+  display: inline-flex;
+  background: var(--off-white);
+  border: 1px solid var(--gray-light);
+  border-radius: 100px;
+  padding: 0.3rem;
+  gap: 0.25rem;
+}
+
+.catalogo-filter {
+  border: none;
+  background: transparent;
+  padding: 0.55rem 1.25rem;
+  border-radius: 100px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--navy);
+  transition: background var(--transition), color var(--transition);
+}
+
+.catalogo-filter:hover { color: var(--orange); }
+.catalogo-filter.active {
+  background: var(--navy);
+  color: var(--white);
+  box-shadow: 0 6px 16px rgba(27,58,92,0.2);
+}
+
+.catalogo-search {
+  position: relative;
+  flex: 1 1 280px;
+  max-width: 380px;
+}
+
+.catalogo-search__icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  color: var(--gray);
+  pointer-events: none;
+}
+
+.catalogo-search__input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.75rem;
+  border-radius: 100px;
+  border: 1px solid var(--gray-light);
+  background: var(--white);
+  font-family: inherit;
+  font-size: 0.92rem;
+  color: var(--navy);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.catalogo-search__input::placeholder { color: var(--gray); }
+.catalogo-search__input:focus {
+  outline: none;
+  border-color: var(--orange);
+  box-shadow: 0 0 0 4px rgba(232,135,43,0.12);
+}
+
+.catalogo-empty {
+  text-align: center;
+  color: var(--gray);
+  padding: 3rem 1rem;
+  font-style: italic;
+}
+
+.catalogo-section--hidden { display: none; }
+.aroma-card--hidden { display: none !important; }
+.catalogo__category--empty { display: none; }
+
+@media (max-width: 768px) {
+  .catalogo-controls { top: 78px; }
+  .catalogo-controls__inner { gap: 1rem; padding-top: 1rem; padding-bottom: 1rem; }
+  .catalogo-filter { padding: 0.5rem 0.95rem; font-size: 0.85rem; }
+  .catalogo-search { flex: 1 1 100%; max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .catalogo-controls { top: 70px; }
+  .catalogo-filters { width: 100%; justify-content: center; }
+}
+
 /* ===== PRODUCT MODAL ===== */
 .product-modal {
   position: fixed;
