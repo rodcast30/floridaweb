@@ -1,131 +1,5 @@
 // =======================================
-// SPRAY PARTICLE INTRO ANIMATION (Canvas)
-// =======================================
-(function sprayIntro() {
-  const overlay = document.getElementById('sprayOverlay');
-  const canvas = document.getElementById('sprayCanvas');
-  const ctx = canvas.getContext('2d');
-
-  let W, H;
-  const particles = [];
-  const PARTICLE_COUNT = 300;
-  const COLORS = ['#E8872B', '#f5a623', '#1B3A5C', '#ffffff', '#FFD580', '#FF8C42'];
-  const GRAVITY = 0.03;
-  const FRICTION = 0.985;
-  let overlayOpacity = 1;
-  let animationStarted = false;
-  let startTime = 0;
-  const REVEAL_DELAY = 400;   // ms before overlay starts fading
-  const REVEAL_DURATION = 1800; // ms for full fade
-
-  function resize() {
-    W = canvas.width = window.innerWidth;
-    H = canvas.height = window.innerHeight;
-  }
-
-  function createParticle(cx, cy) {
-    const angle = Math.random() * Math.PI * 2;
-    const speed = 2 + Math.random() * 10;
-    const size = 2 + Math.random() * 6;
-    return {
-      x: cx + (Math.random() - 0.5) * 20,
-      y: cy + (Math.random() - 0.5) * 20,
-      vx: Math.cos(angle) * speed * (0.5 + Math.random()),
-      vy: Math.sin(angle) * speed * (0.5 + Math.random()),
-      size: size,
-      color: COLORS[Math.floor(Math.random() * COLORS.length)],
-      alpha: 0.8 + Math.random() * 0.2,
-      decay: 0.003 + Math.random() * 0.008,
-      life: 1,
-    };
-  }
-
-  function spawnWave(cx, cy, count) {
-    for (let i = 0; i < count; i++) {
-      particles.push(createParticle(cx, cy));
-    }
-  }
-
-  function update(now) {
-    if (!animationStarted) return;
-
-    const elapsed = now - startTime;
-
-    // Update overlay opacity
-    if (elapsed > REVEAL_DELAY) {
-      const fadeProgress = Math.min((elapsed - REVEAL_DELAY) / REVEAL_DURATION, 1);
-      overlayOpacity = 1 - fadeProgress;
-    }
-
-    // Clear
-    ctx.clearRect(0, 0, W, H);
-
-    // Draw dark background with fading opacity
-    ctx.fillStyle = `rgba(15, 38, 64, ${overlayOpacity})`;
-    ctx.fillRect(0, 0, W, H);
-
-    // Update & draw particles
-    for (let i = particles.length - 1; i >= 0; i--) {
-      const p = particles[i];
-
-      p.vy += GRAVITY;
-      p.vx *= FRICTION;
-      p.vy *= FRICTION;
-      p.x += p.vx;
-      p.y += p.vy;
-      p.life -= p.decay;
-
-      if (p.life <= 0) {
-        particles.splice(i, 1);
-        continue;
-      }
-
-      ctx.save();
-      ctx.globalAlpha = p.life * p.alpha;
-      ctx.fillStyle = p.color;
-      ctx.shadowColor = p.color;
-      ctx.shadowBlur = p.size * 2;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.size * p.life, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.restore();
-    }
-
-    // Check if done
-    if (overlayOpacity <= 0 && particles.length === 0) {
-      overlay.classList.add('done');
-      initPage();
-      return;
-    }
-
-    requestAnimationFrame(update);
-  }
-
-  function startSpray() {
-    if (animationStarted) return;
-    animationStarted = true;
-    startTime = performance.now();
-
-    const cx = W / 2;
-    const cy = H / 2;
-
-    // Multiple bursts staggered
-    spawnWave(cx, cy, PARTICLE_COUNT);
-    setTimeout(() => spawnWave(cx, cy, Math.floor(PARTICLE_COUNT * 0.6)), 150);
-    setTimeout(() => spawnWave(cx, cy, Math.floor(PARTICLE_COUNT * 0.3)), 350);
-
-    requestAnimationFrame(update);
-  }
-
-  resize();
-  window.addEventListener('resize', resize);
-
-  // Auto-start after a short delay
-  setTimeout(startSpray, 300);
-})();
-
-// =======================================
-// PAGE INIT (after spray finishes)
+// PAGE INIT
 // =======================================
 function initPage() {
   // GSAP + ScrollTrigger
@@ -298,3 +172,12 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
     e.target.reset();
   }, 2500);
 });
+
+// =======================================
+// LAUNCH ANIMATIONS ON LOAD
+// =======================================
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initPage);
+} else {
+  initPage();
+}

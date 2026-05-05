@@ -74,23 +74,6 @@ img { max-width: 100%; display: block; }
   color: var(--orange);
 }
 
-/* ===== SPRAY OVERLAY ===== */
-.spray-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 10000;
-  background: var(--navy-dark);
-  pointer-events: none;
-}
-
-.spray-overlay canvas {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.spray-overlay.done { display: none; }
-
 /* ===== WHATSAPP FLOAT ===== */
 .whatsapp-float {
   position: fixed;
@@ -983,7 +966,6 @@ img { max-width: 100%; display: block; }
   }
   [data-animate] { opacity: 1 !important; transform: none !important; }
   .hero__title-accent .char { opacity: 1 !important; transform: none !important; }
-  .spray-overlay { display: none !important; }
 }
 
 /* ===== RESPONSIVE ===== */
