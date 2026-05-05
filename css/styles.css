@@ -859,12 +859,12 @@ img { max-width: 100%; display: block; }
 .nosotros__lead {
   font-size: 1.05rem;
   line-height: 1.7;
-  color: rgba(255,255,255,0.92);
+  color: var(--navy);
   margin-bottom: 1rem;
 }
 
 .nosotros__historia-content > p:not(.nosotros__lead) {
-  color: rgba(255,255,255,0.65);
+  color: var(--gray);
   line-height: 1.7;
   font-size: 0.95rem;
   margin-bottom: 2rem;
@@ -903,7 +903,7 @@ img { max-width: 100%; display: block; }
 }
 
 .valor-icon strong {
-  color: rgba(255,255,255,0.95);
+  color: var(--navy);
   font-size: 0.9rem;
   font-weight: 600;
 }
@@ -922,7 +922,7 @@ img { max-width: 100%; display: block; }
 .nosotros__collage-item {
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+  box-shadow: 0 14px 30px rgba(27, 58, 92, 0.12);
   position: relative;
 }
 
@@ -953,11 +953,11 @@ img { max-width: 100%; display: block; }
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 0.85rem;
-  color: var(--white);
+  color: var(--navy);
 }
 
 .pillar p {
-  color: rgba(255,255,255,0.7);
+  color: var(--gray);
   font-size: 0.95rem;
   line-height: 1.65;
 }
@@ -971,7 +971,7 @@ img { max-width: 100%; display: block; }
 .pillar__image {
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.3);
+  box-shadow: 0 18px 40px rgba(27, 58, 92, 0.15);
   aspect-ratio: 4 / 3;
   background: var(--off-white);
 }
@@ -986,7 +986,7 @@ img { max-width: 100%; display: block; }
 .nosotros__backed {
   margin-top: 4rem;
   padding-top: 2.5rem;
-  border-top: 1px solid rgba(255,255,255,0.08);
+  border-top: 1px solid var(--gray-light);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -997,14 +997,13 @@ img { max-width: 100%; display: block; }
   font-size: 0.8rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
+  color: var(--gray);
 }
 
 .nosotros__backed-logo {
   height: 44px;
   width: auto;
-  filter: brightness(0) invert(1);
-  opacity: 0.85;
+  opacity: 0.9;
   transition: opacity var(--transition);
 }
 
