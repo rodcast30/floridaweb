@@ -1,0 +1,19 @@
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Dependencies
+node_modules/
+
+# Source assets (originales, duplicados en images/ con nombres limpios)
+recursosvisuales/

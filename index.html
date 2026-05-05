@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Florida Scent - Soluciones aromáticas diseñadas para cuidar y transformar cada espacio.">
+  <title>Florida Scent | Aromas Premium</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Spray Intro Overlay -->
+  <div class="spray-overlay" id="sprayOverlay">
+    <canvas id="sprayCanvas"></canvas>
+  </div>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/1234567890" class="whatsapp-float" id="whatsappFloat" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <img src="images/icon-whatsapp-float.svg" alt="WhatsApp" class="whatsapp-float__icon">
+  </a>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#inicio" class="nav__logo" aria-label="Florida Scent">
+        <img src="images/logo-fs.svg" alt="Florida Scent" class="nav__logo-img">
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="#productos" class="nav__link">Productos</a></li>
+        <li><a href="#fragancias" class="nav__link">Fragancias</a></li>
+        <li><a href="#nosotros" class="nav__link">Nosotros</a></li>
+        <li><a href="#contacto" class="nav__link nav__link--cta">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="container hero__layout">
+      <div class="hero__content">
+        <p class="hero__tag" data-animate="fade-up">Descubre el placer de</p>
+        <h1 class="hero__title">
+          <span class="hero__title-accent" data-split="true">un aroma</span><br>
+          <span class="hero__title-sub" data-animate="fade-up">bien pensado</span>
+        </h1>
+        <p class="hero__subtitle" data-animate="fade-up">Soluciones diseñadas para cuidar y transformar cada espacio.</p>
+        <div class="hero__actions" data-animate="fade-up">
+          <a href="#productos" class="btn btn--primary btn--magnetic">Productos</a>
+          <a href="#nosotros" class="btn btn--outline btn--magnetic">Nosotros</a>
+        </div>
+      </div>
+      <div class="hero__visual" data-animate="fade-left">
+        <img src="images/portada-hero.svg" alt="Florida Scent" class="hero__visual-img">
+      </div>
+    </div>
+    <div class="hero__stats">
+      <div class="container hero__stats-grid">
+        <div class="hero__stat">
+          <span class="hero__stat-number" data-count="23">0</span>
+          <span class="hero__stat-label">años de experiencia</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-number" data-count="5">0</span>
+          <span class="hero__stat-label">años creando aromas</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-number" data-count="20" data-suffix="+">0</span>
+          <span class="hero__stat-label">fragancias premium</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-number" data-count="100" data-suffix=" %">0</span>
+          <span class="hero__stat-label">higiene y seguridad</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section class="productos section" id="productos">
+    <div class="container">
+      <div class="section__header" data-animate="fade-up">
+        <p class="section__tag">Nuestros productos de</p>
+        <h2 class="section__title"><span class="accent-italic">cuidado esencial</span></h2>
+      </div>
+      <p class="section__intro" data-animate="fade-up">Nuestra línea de productos ha sido desarrollada para mejorar la experiencia de los espacios, combinando soluciones aromáticas y funcionales que aportan frescura, limpieza y confort.</p>
+      <div class="productos__grid">
+        <!-- Aerosoles -->
+        <div class="producto-card" data-animate="fade-up">
+          <div class="producto-card__img">
+            <img src="images/producto-aerosoles.svg" alt="Aerosoles Florida Scent" class="producto-card__img-asset">
+          </div>
+          <div class="producto-card__body">
+            <h3 class="producto-card__title">Aerosoles</h3>
+            <p class="producto-card__text">Aromatizantes diseñados para brindar frescura inmediata y duradera, ayudando a mantener los espacios con una sensación agradable, limpia y bien cuidada.</p>
+            <ul class="producto-card__tags">
+              <li>Aromatizantes ambientales</li>
+              <li>Aroma limpio y agradable</li>
+              <li>Control de malos olores</li>
+            </ul>
+            <a href="#" class="btn btn--primary btn--sm">Ver ficha técnica</a>
+          </div>
+        </div>
+        <!-- Tapetes -->
+        <div class="producto-card" data-animate="fade-up" data-delay="0.15">
+          <div class="producto-card__img">
+            <img src="images/producto-tapetes.svg" alt="Tapetes Florida Scent" class="producto-card__img-asset">
+          </div>
+          <div class="producto-card__body">
+            <h3 class="producto-card__title">Tapetes</h3>
+            <p class="producto-card__text">Soluciones prácticas que protegen las superficies, ayudando a mantener la limpieza y el orden en áreas de alto uso, sin descuidar la funcionalidad y la higiene.</p>
+            <ul class="producto-card__tags">
+              <li>Fragancia de larga duración</li>
+              <li>Flexible y adaptable a cualquier mingitorio</li>
+              <li>Cuenta con activo bactericida</li>
+            </ul>
+            <a href="#" class="btn btn--primary btn--sm">Ver ficha técnica</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRAGANCIAS -->
+  <section class="fragancias section section--dark" id="fragancias">
+    <div class="container">
+      <div class="section__header" data-animate="fade-up">
+        <p class="section__tag section__tag--light">El aroma ideal para</p>
+        <h2 class="section__title section__title--light"><span class="accent-italic">cada ambiente</span></h2>
+      </div>
+      <p class="section__intro section__intro--light" data-animate="fade-up">Cada fragancia ha sido cuidadosamente creada para evocar emociones, transmitir sensaciones y acompañar distintos estilos de ambiente, dando lugar a experiencias sensoriales memorables.</p>
+
+      <div class="fragancias__grid">
+        <div class="fragancia-card" data-animate="fade-up" data-delay="0">
+          <div class="fragancia-card__img">
+            <img src="images/cat-herbales.svg" alt="Calma y relajación" class="fragancia-card__img-asset">
+          </div>
+          <div class="fragancia-card__body">
+            <h3 class="fragancia-card__title">Calma y relajación</h3>
+            <span class="fragancia-card__badge fragancia-card__badge--herbales">Herbales</span>
+            <p class="fragancia-card__text">Creaciones aromáticas orientadas a generar entornos de serenidad, paz y equilibrio para el descanso y el bienestar.</p>
+          </div>
+        </div>
+        <div class="fragancia-card" data-animate="fade-up" data-delay="0.1">
+          <div class="fragancia-card__img placeholder-img--cat placeholder-img--frescos"></div>
+          <div class="fragancia-card__body">
+            <h3 class="fragancia-card__title">Limpieza y pureza</h3>
+            <span class="fragancia-card__badge fragancia-card__badge--frescos">Frescos</span>
+            <p class="fragancia-card__text">Fragancias que aportan una sensación de frescura y orden, creando espacios limpios y ventilados.</p>
+          </div>
+        </div>
+        <div class="fragancia-card" data-animate="fade-up" data-delay="0.2">
+          <div class="fragancia-card__img">
+            <img src="images/cat-frutales.svg" alt="Cálido y acogedor" class="fragancia-card__img-asset">
+          </div>
+          <div class="fragancia-card__body">
+            <h3 class="fragancia-card__title">Cálido y acogedor</h3>
+            <span class="fragancia-card__badge fragancia-card__badge--frutales">Frutales</span>
+            <p class="fragancia-card__text">Aromas que generan ambientes confortables y agradables que evocan la tranquilidad y seguridad del hogar.</p>
+          </div>
+        </div>
+        <div class="fragancia-card" data-animate="fade-up" data-delay="0">
+          <div class="fragancia-card__img">
+            <img src="images/cat-exoticos.svg" alt="Elegantes y sofisticados" class="fragancia-card__img-asset">
+          </div>
+          <div class="fragancia-card__body">
+            <h3 class="fragancia-card__title">Elegantes y sofisticados</h3>
+            <span class="fragancia-card__badge fragancia-card__badge--exoticos">Exóticos</span>
+            <p class="fragancia-card__text">Composiciones refinadas que aportan delicadeza y distinción, elevando la experiencia sensorial del espacio.</p>
+          </div>
+        </div>
+        <div class="fragancia-card" data-animate="fade-up" data-delay="0.1">
+          <div class="fragancia-card__img">
+            <img src="images/cat-citricos.svg" alt="Energía y frescura" class="fragancia-card__img-asset">
+          </div>
+          <div class="fragancia-card__body">
+            <h3 class="fragancia-card__title">Energía y frescura</h3>
+            <span class="fragancia-card__badge fragancia-card__badge--citricos">Cítricos</span>
+            <p class="fragancia-card__text">Esencias vibrantes que llenan el entorno de dinamismo y vitalidad, evocan sensación de actividad y renovación.</p>
+          </div>
+        </div>
+        <div class="fragancia-card" data-animate="fade-up" data-delay="0.2">
+          <div class="fragancia-card__img">
+            <img src="images/cat-suaves.svg" alt="Destinos aromáticos" class="fragancia-card__img-asset">
+          </div>
+          <div class="fragancia-card__body">
+            <h3 class="fragancia-card__title">Destinos aromáticos</h3>
+            <span class="fragancia-card__badge fragancia-card__badge--suaves">Suaves</span>
+            <p class="fragancia-card__text">Diseñados para inspirar y conectar con distintos rincones del mundo en una experiencia única.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO FRAGANCIAS DETALLE -->
+  <section class="catalogo section" id="catalogo">
+    <div class="container">
+      <!-- Herbales -->
+      <div class="catalogo__category" data-animate="fade-up">
+        <h3 class="catalogo__cat-title"><span class="accent-italic">Herbales</span></h3>
+        <div class="catalogo__products-grid">
+          <div class="aroma-card" data-animate="fade-up">
+            <div class="aroma-card__visual"><img src="images/icono-aroma.svg" alt="" class="aroma-card__visual-img"></div>
+            <h4 class="aroma-card__name">Zen <span class="accent-italic">lavender</span></h4>
+            <p class="aroma-card__desc">Clásico de la relajación, con el aroma herbal y floral de la lavanda. Ideal para inducir el descanso y calmar el ánimo.</p>
+            <span class="aroma-card__weight">NET WT 6.39 OZ / 181.1G</span>
+            <div class="aroma-card__meta">
+              <div class="aroma-card__intensity"><span></span><span></span><span></span><span class="dim"></span><span class="dim"></span></div>
+              <span class="fragancia-card__badge fragancia-card__badge--herbales">Herbales</span>
+            </div>
+          </div>
+          <div class="aroma-card" data-animate="fade-up" data-delay="0.1">
+            <div class="aroma-card__visual"><img src="images/icono-aroma.svg" alt="" class="aroma-card__visual-img"></div>
+            <h4 class="aroma-card__name">Wild <span class="accent-italic">flowers</span></h4>
+            <p class="aroma-card__desc">Esencias ligeras y naturales que despiertan la sensación de estar rodeado de flores silvestres al aire libre.</p>
+            <span class="aroma-card__weight">NET WT 6.39 OZ / 181.1G</span>
+            <div class="aroma-card__meta">
+              <div class="aroma-card__intensity"><span></span><span></span><span></span><span></span><span class="dim"></span></div>
+              <span class="fragancia-card__badge fragancia-card__badge--herbales">Herbales</span>
+            </div>
+          </div>
+          <div class="aroma-card" data-animate="fade-up" data-delay="0.2">
+            <div class="aroma-card__visual"><img src="images/icono-aroma.svg" alt="" class="aroma-card__visual-img"></div>
+            <h4 class="aroma-card__name">White <span class="accent-italic">tea</span></h4>
+            <p class="aroma-card__desc">Clásico y sofisticado, con notas cítricas y herbales. Ideal para crear ambientes discretos y elegantes.</p>
+            <span class="aroma-card__weight">NET WT 6.39 OZ / 181.1G</span>
+            <div class="aroma-card__meta">
+              <div class="aroma-card__intensity"><span></span><span></span><span></span><span></span><span class="dim"></span></div>
+              <span class="fragancia-card__badge fragancia-card__badge--herbales">Herbales</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Frescos -->
+      <div class="catalogo__category" data-animate="fade-up">
+        <h3 class="catalogo__cat-title"><span class="accent-italic">Frescos</span></h3>
+        <div class="catalogo__products-grid">
+          <div class="aroma-card" data-animate="fade-up">
+            <div class="aroma-card__visual"><img src="images/icono-aroma.svg" alt="" class="aroma-card__visual-img"></div>
+            <h4 class="aroma-card__name">Linen <span class="accent-italic">bloom</span></h4>
+            <p class="aroma-card__desc">Aroma limpio y suave, ideal para transmitir pureza en el ambiente. Aporta una sensación natural y refrescante.</p>
+            <span class="aroma-card__weight">NET WT 6.39 OZ / 181.1G</span>
+            <div class="aroma-card__meta">
+              <div class="aroma-card__intensity"><span></span><span></span><span></span><span class="dim"></span><span class="dim"></span></div>
+              <span class="fragancia-card__badge fragancia-card__badge--frescos">Frescos</span>
+            </div>
+          </div>
+          <div class="aroma-card" data-animate="fade-up" data-delay="0.1">
+            <div class="aroma-card__visual"><img src="images/icono-aroma.svg" alt="" class="aroma-card__visual-img"></div>
+            <h4 class="aroma-card__name">Valley <span class="accent-italic">sky</span></h4>
+            <p class="aroma-card__desc">Notas suaves con un toque floral y boscoso que transportan a un entorno de vegetación húmeda y naturaleza en calma.</p>
+            <span class="aroma-card__weight">NET WT 6.39 OZ / 181.1G</span>
+            <div class="aroma-card__meta">
+              <div class="aroma-card__intensity"><span></span><span></span><span></span><span></span><span class="dim"></span></div>
+              <span class="fragancia-card__badge fragancia-card__badge--frescos">Frescos</span>
+            </div>
+          </div>
+          <div class="aroma-card" data-animate="fade-up" data-delay="0.2">
+            <div class="aroma-card__visual"><img src="images/icono-aroma.svg" alt="" class="aroma-card__visual-img"></div>
+            <h4 class="aroma-card__name">Clean <span class="accent-italic">air</span></h4>
+            <p class="aroma-card__desc">Aroma neutro, muy fresco y ligero. Evoca aire limpio y ambientes ventilados.</p>
+            <span class="aroma-card__weight">NET WT 6.39 OZ / 181.1G</span>
+            <div class="aroma-card__meta">
+              <div class="aroma-card__intensity"><span></span><span></span><span class="dim"></span><span class="dim"></span><span class="dim"></span></div>
+              <span class="fragancia-card__badge fragancia-card__badge--frescos">Frescos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Frutales -->
+      <div class="catalogo__category" data-animate="fade-up">
+        <h3 class="catalogo__cat-title"><span class="accent-italic">Frutales</span></h3>
+        <div class="catalogo__products-grid">
+          <div class="aroma-card" data-animate="fade-up">
+            <div class="aroma-card__visual"><img src="images/icono-aroma.svg" alt="" class="aroma-card__visual-img"></div>
+            <h4 class="aroma-card__name">Cherry <span class="accent-italic">mist</span></h4>
+            <p class="aroma-card__desc">Un estallido frutal de cereza dulce y jugosa. Alegre, joven y chispeante.</p>
+            <span class="aroma-card__weight">NET WT 6.39 OZ / 181.1G</span>
+            <div class="aroma-card__meta">
+              <div class="aroma-card__intensity"><span></span><span></span><span></span><span></span><span class="dim"></span></div>
+              <span class="fragancia-card__badge fragancia-card__badge--frutales">Frutales</span>
+            </div>
+          </div>
+          <div class="aroma-card" data-animate="fade-up" data-delay="0.1">
+            <div class="aroma-card__visual"><img src="images/aroma-manzana-canela.svg" alt="Apple cinnamon" class="aroma-card__visual-img"></div>
+            <h4 class="aroma-card__name">Apple <span class="accent-italic">cinnamon</span></h4>
+            <p class="aroma-card__desc">Manzana dulce con un toque de canela. Crea un ambiente acogedor y reconfortante.</p>
+            <span class="aroma-card__weight">NET WT 6.39 OZ / 181.1G</span>
+            <div class="aroma-card__meta">
+              <div class="aroma-card__intensity"><span></span><span></span><span></span><span></span><span></span></div>
+              <span class="fragancia-card__badge fragancia-card__badge--frutales">Frutales</span>
+            </div>
+          </div>
+          <div class="aroma-card" data-animate="fade-up" data-delay="0.2">
+            <div class="aroma-card__visual"><img src="images/icono-aroma.svg" alt="" class="aroma-card__visual-img"></div>
+            <h4 class="aroma-card__name">Apple <span class="accent-italic">species</span></h4>
+            <p class="aroma-card__desc">Suaves notas de manzana verde y especies que brindan confort absoluto.</p>
+            <span class="aroma-card__weight">NET WT 6.39 OZ / 181.1G</span>
+            <div class="aroma-card__meta">
+              <div class="aroma-card__intensity"><span></span><span></span><span></span><span class="dim"></span><span class="dim"></span></div>
+              <span class="fragancia-card__badge fragancia-card__badge--frutales">Frutales</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Exóticos -->
+      <div class="catalogo__category" data-animate="fade-up">
+        <h3 class="catalogo__cat-title"><span class="accent-italic">Exóticos</span></h3>
+        <div class="catalogo__products-grid">
+          <div class="aroma-card" data-animate="fade-up">
+            <div class="aroma-card__visual"><img src="images/icono-aroma.svg" alt="" class="aroma-card__visual-img"></div>
+            <h4 class="aroma-card__name">Dark <span class="accent-italic">vanilla</span></h4>
+            <p class="aroma-card__desc">Vainilla profunda con notas amaderadas. Envolvente, cálido y refinado, con un dulzor perfectamente equilibrado.</p>
+            <span class="aroma-card__weight">NET WT 6.39 OZ / 181.1G</span>
+            <div class="aroma-card__meta">
+              <div class="aroma-card__intensity"><span></span><span></span><span></span><span></span><span></span></div>
+              <span class="fragancia-card__badge fragancia-card__badge--exoticos">Exóticos</span>
+            </div>
+          </div>
+          <div class="aroma-card" data-animate="fade-up" data-delay="0.1">
+            <div class="aroma-card__visual"><img src="images/icono-aroma.svg" alt="" class="aroma-card__visual-img"></div>
+            <h4 class="aroma-card__name">Caribbean <span class="accent-italic">breeze</span></h4>
+            <p class="aroma-card__desc">Mezcla de frutas tropicales refrescantes y energizantes, con un toque de brisa del Caribe.</p>
+            <span class="aroma-card__weight">NET WT 6.39 OZ / 181.1G</span>
+            <div class="aroma-card__meta">
+              <div class="aroma-card__intensity"><span></span><span></span><span></span><span></span><span class="dim"></span></div>
+              <span class="fragancia-card__badge fragancia-card__badge--exoticos">Exóticos</span>
+            </div>
+          </div>
+          <div class="aroma-card" data-animate="fade-up" data-delay="0.2">
+            <div class="aroma-card__visual"><img src="images/icono-aroma.svg" alt="" class="aroma-card__visual-img"></div>
+            <h4 class="aroma-card__name">Vanilla <span class="accent-italic">red fruits</span></h4>
+            <p class="aroma-card__desc">Fusión de frutos rojos y vainilla suave. Romántico, familiar y dulce sin ser pesado.</p>
+            <span class="aroma-card__weight">NET WT 6.39 OZ / 181.1G</span>
+            <div class="aroma-card__meta">
+              <div class="aroma-card__intensity"><span></span><span></span><span></span><span></span><span class="dim"></span></div>
+              <span class="fragancia-card__badge fragancia-card__badge--exoticos">Exóticos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Cítricos -->
+      <div class="catalogo__category" data-animate="fade-up">
+        <h3 class="catalogo__cat-title"><span class="accent-italic">Cítricos</span></h3>
+        <div class="catalogo__products-grid">
+          <div class="aroma-card" data-animate="fade-up">
+            <div class="aroma-card__visual"><img src="images/icono-aroma.svg" alt="" class="aroma-card__visual-img"></div>
+            <h4 class="aroma-card__name">Cool citric <span class="accent-italic">tangerine</span></h4>
+            <p class="aroma-card__desc">Mandarina poderosa con un toque limpio y agradable. Aporta notas cítricas y dulces que le dan complejidad.</p>
+            <span class="aroma-card__weight">NET WT 6.39 OZ / 181.1G</span>
+            <div class="aroma-card__meta">
+              <div class="aroma-card__intensity"><span></span><span></span><span></span><span></span><span></span></div>
+              <span class="fragancia-card__badge fragancia-card__badge--citricos">Cítricos</span>
+            </div>
+          </div>
+          <div class="aroma-card" data-animate="fade-up" data-delay="0.1">
+            <div class="aroma-card__visual"><img src="images/icono-aroma.svg" alt="" class="aroma-card__visual-img"></div>
+            <h4 class="aroma-card__name">Crisp <span class="accent-italic">mango</span></h4>
+            <p class="aroma-card__desc">Un aroma tropical intenso que transmite la dulzura y jugosidad de un mango recién cosechado. Energético y vibrante.</p>
+            <span class="aroma-card__weight">NET WT 6.39 OZ / 181.1G</span>
+            <div class="aroma-card__meta">
+              <div class="aroma-card__intensity"><span></span><span></span><span></span><span></span><span></span></div>
+              <span class="fragancia-card__badge fragancia-card__badge--citricos">Cítricos</span>
+            </div>
+          </div>
+          <div class="aroma-card" data-animate="fade-up" data-delay="0.2">
+            <div class="aroma-card__visual"><img src="images/icono-aroma.svg" alt="" class="aroma-card__visual-img"></div>
+            <h4 class="aroma-card__name">Citric <span class="accent-italic">fresh</span></h4>
+            <p class="aroma-card__desc">Deliciosos cítricos como naranja y limón que purifican y revitalizan el ambiente. Ideal para empezar el día.</p>
+            <span class="aroma-card__weight">NET WT 6.39 OZ / 181.1G</span>
+            <div class="aroma-card__meta">
+              <div class="aroma-card__intensity"><span></span><span></span><span></span><span></span><span class="dim"></span></div>
+              <span class="fragancia-card__badge fragancia-card__badge--citricos">Cítricos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Destinos / Suaves -->
+      <div class="catalogo__category" data-animate="fade-up">
+        <h3 class="catalogo__cat-title"><span class="accent-italic">Destinos Aromáticos</span></h3>
+        <div class="catalogo__products-grid">
+          <div class="aroma-card" data-animate="fade-up">
+            <div class="aroma-card__visual"><img src="images/icono-aroma.svg" alt="" class="aroma-card__visual-img"></div>
+            <h4 class="aroma-card__name accent-italic">Berlin</h4>
+            <p class="aroma-card__desc">Combina suaves notas maderosas y herbales con un ligero toque de rosas, perfecto para ambientes sofisticados y serenos.</p>
+            <span class="aroma-card__weight">NET WT 6.39 OZ / 181.1G</span>
+            <div class="aroma-card__meta">
+              <div class="aroma-card__intensity"><span></span><span></span><span></span><span class="dim"></span><span class="dim"></span></div>
+              <span class="fragancia-card__badge fragancia-card__badge--suaves">Suaves</span>
+            </div>
+          </div>
+          <div class="aroma-card" data-animate="fade-up" data-delay="0.1">
+            <div class="aroma-card__visual"><img src="images/icono-aroma.svg" alt="" class="aroma-card__visual-img"></div>
+            <h4 class="aroma-card__name accent-italic">Tokyo</h4>
+            <p class="aroma-card__desc">Aroma oriental con notas cítricas y jazmín que envuelven con frescura floral. Ideal para espacios modernos con carácter.</p>
+            <span class="aroma-card__weight">NET WT 6.39 OZ / 181.1G</span>
+            <div class="aroma-card__meta">
+              <div class="aroma-card__intensity"><span></span><span></span><span></span><span></span><span class="dim"></span></div>
+              <span class="fragancia-card__badge fragancia-card__badge--suaves">Suaves</span>
+            </div>
+          </div>
+          <div class="aroma-card" data-animate="fade-up" data-delay="0.2">
+            <div class="aroma-card__visual"><img src="images/icono-aroma.svg" alt="" class="aroma-card__visual-img"></div>
+            <h4 class="aroma-card__name accent-italic">Bahamas</h4>
+            <p class="aroma-card__desc">Frescura que evoca la brisa del mar y paisajes tropicales. Un aroma suave y relajante que transmite libertad.</p>
+            <span class="aroma-card__weight">NET WT 6.39 OZ / 181.1G</span>
+            <div class="aroma-card__meta">
+              <div class="aroma-card__intensity"><span></span><span></span><span></span><span class="dim"></span><span class="dim"></span></div>
+              <span class="fragancia-card__badge fragancia-card__badge--suaves">Suaves</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section class="nosotros section section--dark" id="nosotros">
+    <div class="container">
+      <div class="section__header" data-animate="fade-up">
+        <p class="section__tag section__tag--light">Nosotros</p>
+        <h2 class="section__title section__title--light"><span class="accent-italic">nuestra historia</span></h2>
+      </div>
+      <div class="nosotros__content" data-animate="fade-up">
+        <p class="nosotros__lead">Florida Scent es una marca registrada de Daisochem, empresa fundada en 1998 y especializada en el desarrollo de soluciones innovadoras para distintos sectores.</p>
+        <p>Con más de 5 años de experiencia, Florida Scent ofrece una línea de aromatizantes ambientales en aerosol y tapetes antisalpicaduras para mingitorios, diseñada para mejorar la experiencia de los espacios mediante fragancias de alta calidad que refuerzan la higiene y la percepción de limpieza en entornos comerciales e institucionales.</p>
+      </div>
+      <div class="nosotros__grid">
+        <div class="nosotros__card" data-animate="fade-up">
+          <h4 class="nosotros__card-label">Misión</h4>
+          <p>Desarrollar soluciones que aporten valor a espacios comerciales e institucionales, respaldadas por la experiencia de Daisochem.</p>
+        </div>
+        <div class="nosotros__card" data-animate="fade-up" data-delay="0.1">
+          <h4 class="nosotros__card-label">Visión</h4>
+          <p>Consolidarnos como una línea referente en soluciones de ambientación e higiene por nuestra innovación, calidad y enfoque en la experiencia del usuario.</p>
+        </div>
+      </div>
+      <div class="nosotros__proposito" data-animate="fade-up">
+        <h4>Nuestro <span class="accent-italic">propósito</span></h4>
+        <p>Crear ambientes más agradables e higiénicos a través de soluciones aromáticas funcionales.</p>
+      </div>
+      <div class="nosotros__valores" data-animate="fade-up">
+        <h4>Nuestros <span class="accent-italic">valores</span></h4>
+        <div class="nosotros__valores-grid">
+          <div class="valor">
+            <strong>Calidad</strong>
+            <p>Compromiso con productos bien formulados y con un desempeño constante.</p>
+          </div>
+          <div class="valor">
+            <strong>Responsabilidad</strong>
+            <p>Actuamos de manera ética en cada proceso, desde la producción hasta la comercialización.</p>
+          </div>
+          <div class="valor">
+            <strong>Confianza</strong>
+            <p>Construimos relaciones duraderas basadas en la transparencia y el cumplimiento.</p>
+          </div>
+        </div>
+      </div>
+      <div class="nosotros__backed" data-animate="fade-up">
+        <span>Respaldados por</span>
+        <img src="images/logo-daisochem.svg" alt="Daisochem" class="nosotros__backed-logo">
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contacto section" id="contacto">
+    <div class="container">
+      <div class="section__header" data-animate="fade-up">
+        <p class="section__tag">Sé parte de nuestras alianzas</p>
+        <h2 class="section__title"><span class="accent-italic">comerciales</span></h2>
+      </div>
+      <p class="section__intro" data-animate="fade-up">Únete a nuestra red de distribuidores y lleva nuestros productos de alto nivel a nuevos mercados. Completa el formulario y uno de nuestros asesores se pondrá en contacto contigo.</p>
+      <div class="contacto__grid">
+        <form class="contacto__form" id="contactForm" data-animate="fade-up">
+          <div class="form__row">
+            <div class="form__group">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form__group">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+          </div>
+          <div class="form__group">
+            <label for="consulta">Consulta</label>
+            <textarea id="consulta" name="consulta" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--magnetic">Solicitar</button>
+        </form>
+        <div class="contacto__social" data-animate="fade-up" data-delay="0.15">
+          <h4>Redes <span class="accent-italic">sociales</span></h4>
+          <div class="contacto__social-icons">
+            <a href="#" class="social-icon" aria-label="WhatsApp"><img src="images/icon-whatsapp.svg" alt=""></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><img src="images/icon-facebook.svg" alt=""></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><img src="images/icon-instagram.svg" alt=""></a>
+            <a href="#" class="social-icon" aria-label="TikTok"><img src="images/icon-tiktok.svg" alt=""></a>
+          </div>
+          <div class="contacto__company">
+            <span>Nuestra compañía</span>
+            <img src="images/logo-daisochem.svg" alt="Daisochem" class="contacto__company-logo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Florida Scent by Daisochem. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
