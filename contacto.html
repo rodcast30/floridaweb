@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contacto Florida Scent - Únete a nuestra red de distribuidores.">
+  <title>Contacto | Florida Scent</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/1234567890" class="whatsapp-float" id="whatsappFloat" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <img src="images/icon-whatsapp-float.svg" alt="WhatsApp" class="whatsapp-float__icon">
+  </a>
+
+  <!-- Header -->
+  <header class="header header--solid" id="header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo" aria-label="Florida Scent">
+        <img src="images/logo-fs.svg" alt="Florida Scent" class="nav__logo-img">
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="index.html#productos" class="nav__link">Productos</a></li>
+        <li><a href="index.html#fragancias" class="nav__link">Fragancias</a></li>
+        <li><a href="catalogo.html" class="nav__link">Catálogo</a></li>
+        <li><a href="index.html#nosotros" class="nav__link">Nosotros</a></li>
+        <li><a href="contacto.html" class="nav__link nav__link--cta nav__link--active">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HEADER PAGINA -->
+  <section class="page-header">
+    <div class="container">
+      <p class="section__tag" data-animate="fade-up">Sé parte de nuestras alianzas</p>
+      <h1 class="section__title" data-animate="fade-up">Sé parte de nuestras alianzas <span class="accent-italic">comerciales</span></h1>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contacto section" id="contacto">
+    <div class="container">
+      <div class="contacto__grid">
+        <div class="contacto__info" data-animate="fade-right">
+          <h3 class="contacto__info-title">Comunícate con nosotros</h3>
+          <p class="contacto__info-text">Únete a nuestra red de distribuidores y lleva nuestros productos de alto nivel a nuevos mercados. Completa el formulario y uno de nuestros asesores se pondrá en contacto contigo.</p>
+
+          <div class="contacto__info-block">
+            <span class="contacto__info-label">Correo electrónico</span>
+            <a href="mailto:consultas@daisochem.com" class="contacto__info-value">consultas@daisochem.com</a>
+          </div>
+
+          <div class="contacto__info-block">
+            <span class="contacto__info-label">Dirección</span>
+            <p class="contacto__info-value">Boulevard a Pinares 11-59 zona 8 San Cristóbal, Mixco, Guatemala CP.01057</p>
+          </div>
+
+          <div class="contacto__info-block">
+            <span class="contacto__info-label">Redes sociales</span>
+            <div class="contacto__social-icons">
+              <a href="#" class="social-icon" aria-label="WhatsApp"><img src="images/icon-whatsapp.svg" alt=""></a>
+              <a href="#" class="social-icon" aria-label="Facebook"><img src="images/icon-facebook.svg" alt=""></a>
+              <a href="#" class="social-icon" aria-label="Instagram"><img src="images/icon-instagram.svg" alt=""></a>
+              <a href="#" class="social-icon" aria-label="TikTok"><img src="images/icon-tiktok.svg" alt=""></a>
+            </div>
+          </div>
+        </div>
+
+        <form class="contacto__form" id="contactForm" data-animate="fade-left">
+          <div class="form__row">
+            <div class="form__group">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form__group">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+          </div>
+          <div class="form__group">
+            <label for="producto">Producto de interés <span class="form__hint">(opcional)</span></label>
+            <input type="text" id="producto" name="producto" placeholder="Ej: Zen lavender">
+          </div>
+          <div class="form__group">
+            <label for="consulta">Consulta</label>
+            <textarea id="consulta" name="consulta" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--magnetic">Solicitar</button>
+          <div class="contacto__company">
+            <span>Nuestra compañía</span>
+            <img src="images/logo-daisochem.svg" alt="Daisochem" class="contacto__company-logo">
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Florida Scent by Daisochem. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

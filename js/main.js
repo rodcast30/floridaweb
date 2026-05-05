@@ -160,18 +160,121 @@ function updateActiveLink() {
 window.addEventListener('scroll', updateActiveLink);
 
 // ---- Contact form ----
-document.getElementById('contactForm').addEventListener('submit', (e) => {
-  e.preventDefault();
-  const btn = e.target.querySelector('.btn');
-  const original = btn.textContent;
-  btn.textContent = 'Enviado!';
-  btn.style.background = '#22c55e';
-  setTimeout(() => {
-    btn.textContent = original;
-    btn.style.background = '';
-    e.target.reset();
-  }, 2500);
-});
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    const original = btn.textContent;
+    btn.textContent = 'Enviado!';
+    btn.style.background = '#22c55e';
+    setTimeout(() => {
+      btn.textContent = original;
+      btn.style.background = '';
+      e.target.reset();
+    }, 2500);
+  });
+
+  // Prefill producto field from URL ?producto=...
+  const params = new URLSearchParams(window.location.search);
+  const producto = params.get('producto');
+  if (producto) {
+    const productoInput = document.getElementById('producto');
+    if (productoInput) productoInput.value = producto;
+    const consultaInput = document.getElementById('consulta');
+    if (consultaInput) {
+      consultaInput.value = `Solicito cotización del producto "${producto}". `;
+      consultaInput.focus();
+    }
+  }
+}
+
+// =======================================
+// PRODUCT MODAL (catalogo.html)
+// =======================================
+const productModal = document.getElementById('productModal');
+if (productModal) {
+  const modalVisual = document.getElementById('modalVisual');
+  const modalCategory = document.getElementById('modalCategory');
+  const modalName = document.getElementById('modalProductName');
+  const modalDesc = document.getElementById('modalDesc');
+  const modalIntensity = document.getElementById('modalIntensity');
+  const modalWeight = document.getElementById('modalWeight');
+  const modalWeightSpec = document.getElementById('modalWeightSpec');
+  const modalCta = document.getElementById('modalCta');
+
+  function openProductModal(card) {
+    // Visual
+    const visualSrc = card.querySelector('.aroma-card__visual') || card.querySelector('.tapete-visual');
+    modalVisual.innerHTML = '';
+    if (card.classList.contains('aroma-card--tapete')) {
+      const tap = card.querySelector('.tapete-visual').cloneNode(true);
+      modalVisual.appendChild(tap);
+      modalVisual.classList.add('product-modal__visual--tapete');
+    } else {
+      modalVisual.classList.remove('product-modal__visual--tapete');
+      const img = card.querySelector('.aroma-card__visual-img');
+      if (img) {
+        const clone = img.cloneNode(true);
+        clone.removeAttribute('class');
+        modalVisual.appendChild(clone);
+      }
+    }
+
+    // Name
+    const nameEl = card.querySelector('.aroma-card__name');
+    modalName.innerHTML = nameEl.innerHTML;
+
+    // Description
+    modalDesc.textContent = card.querySelector('.aroma-card__desc').textContent;
+
+    // Weight
+    const weightEl = card.querySelector('.aroma-card__weight');
+    if (weightEl) {
+      modalWeight.textContent = weightEl.textContent;
+      modalWeightSpec.style.display = '';
+    } else {
+      modalWeightSpec.style.display = 'none';
+    }
+
+    // Intensity
+    const intensityEl = card.querySelector('.aroma-card__intensity');
+    modalIntensity.innerHTML = intensityEl ? intensityEl.innerHTML : '';
+
+    // Category badge
+    const badge = card.querySelector('.fragancia-card__badge');
+    if (badge) {
+      modalCategory.textContent = badge.textContent;
+      modalCategory.className = 'product-modal__category ' + Array.from(badge.classList).filter(c => c.startsWith('fragancia-card__badge--')).join(' ');
+    }
+
+    // CTA link
+    const productName = nameEl.textContent.trim();
+    modalCta.href = `contacto.html?producto=${encodeURIComponent(productName)}`;
+
+    productModal.classList.add('open');
+    productModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+  }
+
+  function closeProductModal() {
+    productModal.classList.remove('open');
+    productModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+  }
+
+  document.querySelectorAll('.aroma-card').forEach(card => {
+    card.addEventListener('click', () => openProductModal(card));
+  });
+
+  productModal.querySelectorAll('[data-modal-close]').forEach(el => {
+    el.addEventListener('click', closeProductModal);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && productModal.classList.contains('open')) closeProductModal();
+  });
+}
 
 // =======================================
 // LAUNCH ANIMATIONS ON LOAD
