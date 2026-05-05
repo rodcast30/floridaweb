@@ -123,7 +123,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 92px;
 }
 
 .nav__logo {
@@ -132,7 +132,7 @@ img { max-width: 100%; display: block; }
 }
 
 .nav__logo-img {
-  height: 52px;
+  height: 72px;
   width: auto;
   display: block;
 }
@@ -215,7 +215,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 80px;
+  padding-top: 92px;
   position: relative;
   overflow: hidden;
   background:
@@ -1216,8 +1216,8 @@ a.contacto__info-value:hover { color: var(--orange); }
 
   .container { padding: 0 1.25rem; }
 
-  .nav { height: 70px; }
-  .nav__logo-img { height: 44px; }
+  .nav { height: 78px; }
+  .nav__logo-img { height: 60px; }
   .nav__toggle { display: flex; z-index: 102; }
 
   .nav__menu {
@@ -1330,8 +1330,8 @@ a.contacto__info-value:hover { color: var(--orange); }
   html { font-size: 14.5px; }
   .container { padding: 0 1rem; }
 
-  .nav { height: 64px; }
-  .nav__logo-img { height: 38px; }
+  .nav { height: 70px; }
+  .nav__logo-img { height: 52px; }
 
   .hero { padding-top: 80px; }
   .hero__tag { font-size: 0.95rem; }
