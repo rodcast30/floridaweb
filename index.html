@@ -26,6 +26,7 @@
       <ul class="nav__menu" id="navMenu">
         <li><a href="#productos" class="nav__link">Productos</a></li>
         <li><a href="#fragancias" class="nav__link">Fragancias</a></li>
+        <li><a href="#catalogo-tapetes" class="nav__link">Tapetes</a></li>
         <li><a href="#nosotros" class="nav__link">Nosotros</a></li>
         <li><a href="#contacto" class="nav__link nav__link--cta">Contacto</a></li>
       </ul>
@@ -38,17 +39,31 @@
       <div class="hero__content">
         <p class="hero__tag" data-animate="fade-up">Descubre el placer de</p>
         <h1 class="hero__title">
-          <span class="hero__title-accent" data-split="true">un aroma</span><br>
+          <span class="hero__title-accent" data-split="true">un aroma</span>
           <span class="hero__title-sub" data-animate="fade-up">bien pensado</span>
         </h1>
-        <p class="hero__subtitle" data-animate="fade-up">Soluciones diseñadas para cuidar y transformar cada espacio.</p>
+        <div class="hero__pill" data-animate="fade-up">
+          <p class="hero__subtitle">Soluciones diseñadas para cuidar y transformar cada espacio.</p>
+        </div>
         <div class="hero__actions" data-animate="fade-up">
           <a href="#productos" class="btn btn--primary btn--magnetic">Productos</a>
           <a href="#nosotros" class="btn btn--outline btn--magnetic">Nosotros</a>
         </div>
+        <div class="hero__badge" data-animate="fade-up">
+          <span class="hero__badge-icon">&#128293;</span>
+          <span class="hero__badge-text">+500 espacios aromatizados</span>
+        </div>
       </div>
-      <div class="hero__visual" data-animate="fade-left">
-        <img src="images/producto-aerosoles.webp" alt="Aerosoles Florida Scent" class="hero__visual-img">
+      <div class="hero__collage" data-animate="fade-left">
+        <div class="hero__collage-main">
+          <img src="images/aerosoles-aromas.webp" alt="Aerosoles Florida Scent" loading="eager">
+        </div>
+        <div class="hero__collage-top">
+          <img src="images/aroma-manzana-canela.webp" alt="Apple Cinnamon" loading="eager">
+        </div>
+        <div class="hero__collage-bottom">
+          <img src="images/producto-tapetes.webp" alt="Tapete Florida Scent" loading="eager">
+        </div>
       </div>
     </div>
     <div class="hero__stats">
@@ -407,6 +422,120 @@
               <span class="fragancia-card__badge fragancia-card__badge--suaves">Suaves</span>
             </div>
           </div>
+          <div class="aroma-card" data-animate="fade-up">
+            <div class="aroma-card__visual"><img src="images/icono-aroma.svg" alt="" class="aroma-card__visual-img"></div>
+            <h4 class="aroma-card__name accent-italic">Venice</h4>
+            <p class="aroma-card__desc">Flores suaves en una composición delicada y envolvente. Un aroma elegante y femenino, perfecto para espacios distinguidos.</p>
+            <span class="aroma-card__weight">NET WT 6.39 OZ / 181.1G</span>
+            <div class="aroma-card__meta">
+              <div class="aroma-card__intensity"><span></span><span></span><span></span><span></span><span class="dim"></span></div>
+              <span class="fragancia-card__badge fragancia-card__badge--suaves">Suaves</span>
+            </div>
+          </div>
+          <div class="aroma-card" data-animate="fade-up" data-delay="0.1">
+            <div class="aroma-card__visual"><img src="images/icono-aroma.svg" alt="" class="aroma-card__visual-img"></div>
+            <h4 class="aroma-card__name accent-italic">Hawaiian</h4>
+            <p class="aroma-card__desc">Un aroma tropical suave, con notas frutales que evocan la tranquilidad de una isla paradisíaca.</p>
+            <span class="aroma-card__weight">NET WT 6.39 OZ / 181.1G</span>
+            <div class="aroma-card__meta">
+              <div class="aroma-card__intensity"><span></span><span></span><span></span><span></span><span></span></div>
+              <span class="fragancia-card__badge fragancia-card__badge--suaves">Suaves</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO TAPETES -->
+  <section class="catalogo-tapetes section" id="catalogo-tapetes">
+    <div class="container">
+      <div class="section__header" data-animate="fade-up">
+        <p class="section__tag">Línea de tapetes para</p>
+        <h2 class="section__title"><span class="accent-italic">mingitorios</span></h2>
+      </div>
+      <p class="section__intro" data-animate="fade-up">Tapetes antisalpicaduras con fragancias de larga duración, flexibles y con activo bactericida para mantener espacios higiénicos.</p>
+      <div class="catalogo__products-grid">
+        <div class="aroma-card" data-animate="fade-up">
+          <div class="tapete-visual" style="--tapete-color: #2ecc8b;"></div>
+          <h4 class="aroma-card__name">Citric <span class="accent-italic">tropic</span></h4>
+          <p class="aroma-card__desc">Fragancia cítrica con un toque tropical que brinda una sensación inmediata de frescura y limpieza.</p>
+          <div class="aroma-card__meta">
+            <div class="aroma-card__intensity"><span></span><span></span><span></span><span class="dim"></span><span class="dim"></span></div>
+            <span class="fragancia-card__badge fragancia-card__badge--frutales">Frutales</span>
+          </div>
+        </div>
+        <div class="aroma-card" data-animate="fade-up" data-delay="0.1">
+          <div class="tapete-visual" style="--tapete-color: #b59cd9;"></div>
+          <h4 class="aroma-card__name accent-italic">Lavanda</h4>
+          <p class="aroma-card__desc">Aroma herbal y floral clásico que transmite calma, higiene y bienestar. Crea una atmósfera relajante y limpia.</p>
+          <div class="aroma-card__meta">
+            <div class="aroma-card__intensity"><span></span><span></span><span></span><span></span><span class="dim"></span></div>
+            <span class="fragancia-card__badge fragancia-card__badge--herbales">Herbales</span>
+          </div>
+        </div>
+        <div class="aroma-card" data-animate="fade-up" data-delay="0.2">
+          <div class="tapete-visual" style="--tapete-color: #d8d8d8;"></div>
+          <h4 class="aroma-card__name">Mint <span class="accent-italic">sky</span></h4>
+          <p class="aroma-card__desc">Fragancia fresca y mentolada que aporta una sensación de aire limpio y renovación continua.</p>
+          <div class="aroma-card__meta">
+            <div class="aroma-card__intensity"><span></span><span></span><span></span><span></span><span class="dim"></span></div>
+            <span class="fragancia-card__badge fragancia-card__badge--frescos">Frescos</span>
+          </div>
+        </div>
+        <div class="aroma-card" data-animate="fade-up">
+          <div class="tapete-visual" style="--tapete-color: #3a7bd5;"></div>
+          <h4 class="aroma-card__name accent-italic">Marine</h4>
+          <p class="aroma-card__desc">Aroma fresco inspirado en la brisa marina. Evoca limpieza, amplitud y frescura continua.</p>
+          <div class="aroma-card__meta">
+            <div class="aroma-card__intensity"><span></span><span></span><span></span><span class="dim"></span><span class="dim"></span></div>
+            <span class="fragancia-card__badge fragancia-card__badge--frescos">Frescos</span>
+          </div>
+        </div>
+        <div class="aroma-card" data-animate="fade-up" data-delay="0.1">
+          <div class="tapete-visual" style="--tapete-color: #d9534f;"></div>
+          <h4 class="aroma-card__name accent-italic">Tangerine</h4>
+          <p class="aroma-card__desc">Aroma cítrico dulce y vibrante, con notas de mandarina que energizan el ambiente y dejan una percepción agradable.</p>
+          <div class="aroma-card__meta">
+            <div class="aroma-card__intensity"><span></span><span></span><span></span><span></span><span class="dim"></span></div>
+            <span class="fragancia-card__badge fragancia-card__badge--citricos">Cítricos</span>
+          </div>
+        </div>
+        <div class="aroma-card" data-animate="fade-up" data-delay="0.2">
+          <div class="tapete-visual" style="--tapete-color: #c4a882;"></div>
+          <h4 class="aroma-card__name">Dark <span class="accent-italic">vanilla</span></h4>
+          <p class="aroma-card__desc">Fragancia cálida y sofisticada con notas profundas de vainilla. Aporta elegancia y un aroma envolvente.</p>
+          <div class="aroma-card__meta">
+            <div class="aroma-card__intensity"><span></span><span></span><span></span><span></span><span></span></div>
+            <span class="fragancia-card__badge fragancia-card__badge--exoticos">Exóticos</span>
+          </div>
+        </div>
+        <div class="aroma-card" data-animate="fade-up">
+          <div class="tapete-visual" style="--tapete-color: #f1c40f;"></div>
+          <h4 class="aroma-card__name">Yellow <span class="accent-italic">fresh</span></h4>
+          <p class="aroma-card__desc">Aroma fresco y ligero con carácter limpio y brillante. Ideal para espacios que buscan una fragancia que refuerce la higiene.</p>
+          <div class="aroma-card__meta">
+            <div class="aroma-card__intensity"><span></span><span></span><span></span><span class="dim"></span><span class="dim"></span></div>
+            <span class="fragancia-card__badge fragancia-card__badge--citricos">Cítricos</span>
+          </div>
+        </div>
+        <div class="aroma-card" data-animate="fade-up" data-delay="0.1">
+          <div class="tapete-visual" style="--tapete-color: #e8872b;"></div>
+          <h4 class="aroma-card__name">Lemon <span class="accent-italic">grass</span></h4>
+          <p class="aroma-card__desc">Fragancia cítrica natural y equilibrada. Transmite limpieza profunda y frescura prolongada sin ser invasiva.</p>
+          <div class="aroma-card__meta">
+            <div class="aroma-card__intensity"><span></span><span></span><span></span><span class="dim"></span><span class="dim"></span></div>
+            <span class="fragancia-card__badge fragancia-card__badge--citricos">Cítricos</span>
+          </div>
+        </div>
+        <div class="aroma-card" data-animate="fade-up" data-delay="0.2">
+          <div class="tapete-visual" style="--tapete-color: #a4cf3f;"></div>
+          <h4 class="aroma-card__name">Crisp <span class="accent-italic">mango</span></h4>
+          <p class="aroma-card__desc">Fragancia frutal tropical intensa, dulce y jugosa. Aporta energía y vitalidad al ambiente.</p>
+          <div class="aroma-card__meta">
+            <div class="aroma-card__intensity"><span></span><span></span><span></span><span></span><span></span></div>
+            <span class="fragancia-card__badge fragancia-card__badge--frutales">Frutales</span>
+          </div>
         </div>
       </div>
     </div>
@@ -415,45 +544,56 @@
   <!-- NOSOTROS -->
   <section class="nosotros section section--dark" id="nosotros">
     <div class="container">
-      <div class="section__header" data-animate="fade-up">
-        <p class="section__tag section__tag--light">Nosotros</p>
-        <h2 class="section__title section__title--light"><span class="accent-italic">nuestra historia</span></h2>
-      </div>
-      <div class="nosotros__content" data-animate="fade-up">
-        <p class="nosotros__lead">Florida Scent es una marca registrada de Daisochem, empresa fundada en 1998 y especializada en el desarrollo de soluciones innovadoras para distintos sectores.</p>
-        <p>Con más de 5 años de experiencia, Florida Scent ofrece una línea de aromatizantes ambientales en aerosol y tapetes antisalpicaduras para mingitorios, diseñada para mejorar la experiencia de los espacios mediante fragancias de alta calidad que refuerzan la higiene y la percepción de limpieza en entornos comerciales e institucionales.</p>
-      </div>
-      <div class="nosotros__grid">
-        <div class="nosotros__card" data-animate="fade-up">
-          <h4 class="nosotros__card-label">Misión</h4>
-          <p>Desarrollar soluciones que aporten valor a espacios comerciales e institucionales, respaldadas por la experiencia de Daisochem.</p>
+      <div class="nosotros__historia">
+        <div class="nosotros__historia-content" data-animate="fade-right">
+          <p class="section__tag section__tag--light">Nosotros</p>
+          <h2 class="section__title section__title--light">Nuestra <span class="accent-italic">historia</span></h2>
+          <p class="nosotros__lead">Florida Scent nació hace más de 2 décadas respaldado por la familia Daisochem, con el deseo de ofrecer una línea de productos aromatizantes en aerosol que cumplieran con estándares de calidad internacional.</p>
+          <p>Desde nuestros inicios, nos hemos dedicado a la creación de soluciones integrales de aromatización que cumplen con la exigencia del mercado, hoy continuamos innovando nuestra cartera integrando productos como nuestros tapetes urinales diseñados para asegurar la máxima permanencia del aroma. Nuestra historia es una trayectoria impulsada por tecnología para cumplir nuestra promesa de calidad.</p>
+
+          <div class="nosotros__valores">
+            <h4>Valores</h4>
+            <div class="valores-icons">
+              <div class="valor-icon">
+                <span class="valor-icon__circle">&#128101;</span>
+                <strong>Calidad</strong>
+              </div>
+              <div class="valor-icon">
+                <span class="valor-icon__circle">&#127793;</span>
+                <strong>Responsabilidad</strong>
+              </div>
+              <div class="valor-icon">
+                <span class="valor-icon__circle">&#129309;</span>
+                <strong>Confianza</strong>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="nosotros__card" data-animate="fade-up" data-delay="0.1">
-          <h4 class="nosotros__card-label">Visión</h4>
+        <div class="nosotros__collage" data-animate="fade-left">
+          <div class="nosotros__collage-item"><img src="images/aerosoles-ambiente.webp" alt="Florida Scent producto"></div>
+          <div class="nosotros__collage-item"><img src="images/producto-tapetes.webp" alt="Tapete Florida Scent"></div>
+          <div class="nosotros__collage-item"><img src="images/aerosoles-destinos.webp" alt="Línea de aromas"></div>
+        </div>
+      </div>
+
+      <div class="nosotros__pillars">
+        <div class="pillar" data-animate="fade-up">
+          <h3>Nuestra <span class="accent-italic">misión</span></h3>
+          <p>Desarrollar soluciones que aporten valor a espacios comerciales e institucionales, respaldadas por la experiencia de DAISOchem.</p>
+        </div>
+        <div class="pillar pillar--feature" data-animate="fade-up" data-delay="0.1">
+          <div class="pillar__image">
+            <img src="images/producto-aerosoles.webp" alt="Línea Florida Scent">
+          </div>
+          <h3>Nuestra <span class="accent-italic">visión</span></h3>
           <p>Consolidarnos como una línea referente en soluciones de ambientación e higiene por nuestra innovación, calidad y enfoque en la experiencia del usuario.</p>
         </div>
-      </div>
-      <div class="nosotros__proposito" data-animate="fade-up">
-        <h4>Nuestro <span class="accent-italic">propósito</span></h4>
-        <p>Crear ambientes más agradables e higiénicos a través de soluciones aromáticas funcionales.</p>
-      </div>
-      <div class="nosotros__valores" data-animate="fade-up">
-        <h4>Nuestros <span class="accent-italic">valores</span></h4>
-        <div class="nosotros__valores-grid">
-          <div class="valor">
-            <strong>Calidad</strong>
-            <p>Compromiso con productos bien formulados y con un desempeño constante.</p>
-          </div>
-          <div class="valor">
-            <strong>Responsabilidad</strong>
-            <p>Actuamos de manera ética en cada proceso, desde la producción hasta la comercialización.</p>
-          </div>
-          <div class="valor">
-            <strong>Confianza</strong>
-            <p>Construimos relaciones duraderas basadas en la transparencia y el cumplimiento.</p>
-          </div>
+        <div class="pillar" data-animate="fade-up" data-delay="0.2">
+          <h3>Nuestro <span class="accent-italic">propósito</span></h3>
+          <p>Crear ambientes más agradables e higiénicos a través de soluciones aromáticas funcionales.</p>
         </div>
       </div>
+
       <div class="nosotros__backed" data-animate="fade-up">
         <span>Respaldados por</span>
         <img src="images/logo-daisochem.svg" alt="Daisochem" class="nosotros__backed-logo">
@@ -465,12 +605,35 @@
   <section class="contacto section" id="contacto">
     <div class="container">
       <div class="section__header" data-animate="fade-up">
-        <p class="section__tag">Sé parte de nuestras alianzas</p>
-        <h2 class="section__title"><span class="accent-italic">comerciales</span></h2>
+        <h2 class="section__title">Sé parte de nuestras alianzas <span class="accent-italic">comerciales</span></h2>
       </div>
-      <p class="section__intro" data-animate="fade-up">Únete a nuestra red de distribuidores y lleva nuestros productos de alto nivel a nuevos mercados. Completa el formulario y uno de nuestros asesores se pondrá en contacto contigo.</p>
       <div class="contacto__grid">
-        <form class="contacto__form" id="contactForm" data-animate="fade-up">
+        <div class="contacto__info" data-animate="fade-right">
+          <h3 class="contacto__info-title">Comunícate con nosotros</h3>
+          <p class="contacto__info-text">Únete a nuestra red de distribuidores y lleva nuestros productos de alto nivel a nuevos mercados. Completa el formulario y uno de nuestros asesores se pondrá en contacto contigo.</p>
+
+          <div class="contacto__info-block">
+            <span class="contacto__info-label">Correo electrónico</span>
+            <a href="mailto:consultas@daisochem.com" class="contacto__info-value">consultas@daisochem.com</a>
+          </div>
+
+          <div class="contacto__info-block">
+            <span class="contacto__info-label">Dirección</span>
+            <p class="contacto__info-value">Boulevard a Pinares 11-59 zona 8 San Cristóbal, Mixco, Guatemala CP.01057</p>
+          </div>
+
+          <div class="contacto__info-block">
+            <span class="contacto__info-label">Redes sociales</span>
+            <div class="contacto__social-icons">
+              <a href="#" class="social-icon" aria-label="WhatsApp"><img src="images/icon-whatsapp.svg" alt=""></a>
+              <a href="#" class="social-icon" aria-label="Facebook"><img src="images/icon-facebook.svg" alt=""></a>
+              <a href="#" class="social-icon" aria-label="Instagram"><img src="images/icon-instagram.svg" alt=""></a>
+              <a href="#" class="social-icon" aria-label="TikTok"><img src="images/icon-tiktok.svg" alt=""></a>
+            </div>
+          </div>
+        </div>
+
+        <form class="contacto__form" id="contactForm" data-animate="fade-left">
           <div class="form__row">
             <div class="form__group">
               <label for="nombre">Nombre</label>
@@ -486,20 +649,11 @@
             <textarea id="consulta" name="consulta" rows="5" required></textarea>
           </div>
           <button type="submit" class="btn btn--primary btn--magnetic">Solicitar</button>
-        </form>
-        <div class="contacto__social" data-animate="fade-up" data-delay="0.15">
-          <h4>Redes <span class="accent-italic">sociales</span></h4>
-          <div class="contacto__social-icons">
-            <a href="#" class="social-icon" aria-label="WhatsApp"><img src="images/icon-whatsapp.svg" alt=""></a>
-            <a href="#" class="social-icon" aria-label="Facebook"><img src="images/icon-facebook.svg" alt=""></a>
-            <a href="#" class="social-icon" aria-label="Instagram"><img src="images/icon-instagram.svg" alt=""></a>
-            <a href="#" class="social-icon" aria-label="TikTok"><img src="images/icon-tiktok.svg" alt=""></a>
-          </div>
           <div class="contacto__company">
             <span>Nuestra compañía</span>
             <img src="images/logo-daisochem.svg" alt="Daisochem" class="contacto__company-logo">
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </section>
