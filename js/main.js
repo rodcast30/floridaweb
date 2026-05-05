@@ -205,8 +205,8 @@ if (productModal) {
 
   function openProductModal(card) {
     // Visual
-    const visualSrc = card.querySelector('.aroma-card__visual') || card.querySelector('.tapete-visual');
     modalVisual.innerHTML = '';
+    resetZoom();
     if (card.classList.contains('aroma-card--tapete')) {
       const tap = card.querySelector('.tapete-visual').cloneNode(true);
       modalVisual.appendChild(tap);
@@ -217,7 +217,13 @@ if (productModal) {
       if (img) {
         const clone = img.cloneNode(true);
         clone.removeAttribute('class');
+        clone.draggable = false;
         modalVisual.appendChild(clone);
+        // Hint de zoom
+        const hint = document.createElement('span');
+        hint.className = 'product-modal__zoom-hint';
+        hint.textContent = 'Click para inspeccionar';
+        modalVisual.appendChild(hint);
       }
     }
 
@@ -261,7 +267,128 @@ if (productModal) {
     productModal.classList.remove('open');
     productModal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('modal-open');
+    resetZoom();
   }
+
+  // ----- Zoom + pan interactivo del visual -----
+  let zoom = 1;
+  let panX = 0, panY = 0;
+  let isPanning = false;
+  let lastX = 0, lastY = 0;
+  let pinchStartDist = 0, pinchStartZoom = 1;
+  const ZOOM_MIN = 1;
+  const ZOOM_MAX = 4;
+  const ZOOM_STEP = 0.5;
+
+  function applyZoom() {
+    const img = modalVisual.querySelector('img');
+    if (!img) return;
+    if (zoom <= 1) { panX = 0; panY = 0; }
+    img.style.transform = `translate(${panX}px, ${panY}px) scale(${zoom})`;
+    modalVisual.classList.toggle('is-zoomed', zoom > 1);
+  }
+
+  function resetZoom() {
+    zoom = 1; panX = 0; panY = 0;
+    modalVisual.classList.remove('is-zoomed', 'is-panning');
+    const img = modalVisual.querySelector('img');
+    if (img) img.style.transform = '';
+  }
+
+  function clampPan() {
+    const img = modalVisual.querySelector('img');
+    if (!img) return;
+    const rect = modalVisual.getBoundingClientRect();
+    const scaledW = img.offsetWidth * zoom;
+    const scaledH = img.offsetHeight * zoom;
+    const maxX = Math.max(0, (scaledW - rect.width) / 2);
+    const maxY = Math.max(0, (scaledH - rect.height) / 2);
+    panX = Math.max(-maxX, Math.min(maxX, panX));
+    panY = Math.max(-maxY, Math.min(maxY, panY));
+  }
+
+  modalVisual.addEventListener('click', (e) => {
+    if (modalVisual.classList.contains('product-modal__visual--tapete')) return;
+    if (isPanning) return;
+    if (zoom === 1) {
+      // Zoom in centrado en el punto del click
+      const rect = modalVisual.getBoundingClientRect();
+      const cx = e.clientX - rect.left - rect.width / 2;
+      const cy = e.clientY - rect.top - rect.height / 2;
+      zoom = 2.2;
+      panX = -cx * (zoom - 1) / zoom;
+      panY = -cy * (zoom - 1) / zoom;
+      clampPan();
+    } else {
+      zoom = 1; panX = 0; panY = 0;
+    }
+    applyZoom();
+  });
+
+  modalVisual.addEventListener('wheel', (e) => {
+    if (modalVisual.classList.contains('product-modal__visual--tapete')) return;
+    e.preventDefault();
+    const delta = e.deltaY < 0 ? ZOOM_STEP : -ZOOM_STEP;
+    const nextZoom = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, zoom + delta));
+    if (nextZoom === zoom) return;
+    zoom = nextZoom;
+    clampPan();
+    applyZoom();
+  }, { passive: false });
+
+  modalVisual.addEventListener('pointerdown', (e) => {
+    if (zoom <= 1) return;
+    if (modalVisual.classList.contains('product-modal__visual--tapete')) return;
+    isPanning = true;
+    lastX = e.clientX; lastY = e.clientY;
+    modalVisual.classList.add('is-panning');
+    modalVisual.setPointerCapture(e.pointerId);
+  });
+
+  modalVisual.addEventListener('pointermove', (e) => {
+    if (!isPanning) return;
+    panX += e.clientX - lastX;
+    panY += e.clientY - lastY;
+    lastX = e.clientX; lastY = e.clientY;
+    clampPan();
+    applyZoom();
+  });
+
+  function endPan(e) {
+    if (!isPanning) return;
+    isPanning = false;
+    modalVisual.classList.remove('is-panning');
+    if (e && e.pointerId != null) {
+      try { modalVisual.releasePointerCapture(e.pointerId); } catch (_) {}
+    }
+    // Pequeño delay para evitar que el siguiente click toggle el zoom
+    setTimeout(() => { isPanning = false; }, 50);
+  }
+  modalVisual.addEventListener('pointerup', endPan);
+  modalVisual.addEventListener('pointercancel', endPan);
+  modalVisual.addEventListener('pointerleave', endPan);
+
+  // Pinch zoom (touch)
+  modalVisual.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 2) {
+      const dx = e.touches[0].clientX - e.touches[1].clientX;
+      const dy = e.touches[0].clientY - e.touches[1].clientY;
+      pinchStartDist = Math.hypot(dx, dy);
+      pinchStartZoom = zoom;
+    }
+  }, { passive: true });
+
+  modalVisual.addEventListener('touchmove', (e) => {
+    if (e.touches.length === 2 && pinchStartDist > 0) {
+      e.preventDefault();
+      const dx = e.touches[0].clientX - e.touches[1].clientX;
+      const dy = e.touches[0].clientY - e.touches[1].clientY;
+      const dist = Math.hypot(dx, dy);
+      zoom = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, pinchStartZoom * (dist / pinchStartDist)));
+      clampPan();
+      applyZoom();
+    }
+  }, { passive: false });
 
   document.querySelectorAll('.aroma-card').forEach(card => {
     card.addEventListener('click', () => openProductModal(card));
