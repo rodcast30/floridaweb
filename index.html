@@ -192,7 +192,7 @@
       <p class="section__intro" data-animate="fade-up">Cada fragancia ha sido cuidadosamente creada para evocar emociones, transmitir sensaciones y acompañar distintos estilos de ambiente, dando lugar a experiencias sensoriales memorables.</p>
 
       <div class="fragancias__grid">
-        <div class="fragancia-card" data-animate="fade-up" data-delay="0">
+        <a href="catalogo.html?categoria=herbales" class="fragancia-card fragancia-card--link" data-animate="fade-up" data-delay="0">
           <div class="fragancia-card__img">
             <img src="images/cat-herbales.webp" alt="Calma y relajación" class="fragancia-card__img-asset">
           </div>
@@ -200,17 +200,19 @@
             <h3 class="fragancia-card__title">Calma y relajación</h3>
             <span class="fragancia-card__badge fragancia-card__badge--herbales">Herbales</span>
             <p class="fragancia-card__text">Creaciones aromáticas orientadas a generar entornos de serenidad, paz y equilibrio para el descanso y el bienestar.</p>
+            <span class="fragancia-card__cta">Ver fragancias <span aria-hidden="true">&rarr;</span></span>
           </div>
-        </div>
-        <div class="fragancia-card" data-animate="fade-up" data-delay="0.1">
+        </a>
+        <a href="catalogo.html?categoria=frescos" class="fragancia-card fragancia-card--link" data-animate="fade-up" data-delay="0.1">
           <div class="fragancia-card__img placeholder-img--cat placeholder-img--frescos"></div>
           <div class="fragancia-card__body">
             <h3 class="fragancia-card__title">Limpieza y pureza</h3>
             <span class="fragancia-card__badge fragancia-card__badge--frescos">Frescos</span>
             <p class="fragancia-card__text">Fragancias que aportan una sensación de frescura y orden, creando espacios limpios y ventilados.</p>
+            <span class="fragancia-card__cta">Ver fragancias <span aria-hidden="true">&rarr;</span></span>
           </div>
-        </div>
-        <div class="fragancia-card" data-animate="fade-up" data-delay="0.2">
+        </a>
+        <a href="catalogo.html?categoria=frutales" class="fragancia-card fragancia-card--link" data-animate="fade-up" data-delay="0.2">
           <div class="fragancia-card__img">
             <img src="images/cat-frutales.webp" alt="Cálido y acogedor" class="fragancia-card__img-asset">
           </div>
@@ -218,9 +220,10 @@
             <h3 class="fragancia-card__title">Cálido y acogedor</h3>
             <span class="fragancia-card__badge fragancia-card__badge--frutales">Frutales</span>
             <p class="fragancia-card__text">Aromas que generan ambientes confortables y agradables que evocan la tranquilidad y seguridad del hogar.</p>
+            <span class="fragancia-card__cta">Ver fragancias <span aria-hidden="true">&rarr;</span></span>
           </div>
-        </div>
-        <div class="fragancia-card" data-animate="fade-up" data-delay="0">
+        </a>
+        <a href="catalogo.html?categoria=exoticos" class="fragancia-card fragancia-card--link" data-animate="fade-up" data-delay="0">
           <div class="fragancia-card__img">
             <img src="images/cat-exoticos.webp" alt="Elegantes y sofisticados" class="fragancia-card__img-asset">
           </div>
@@ -228,9 +231,10 @@
             <h3 class="fragancia-card__title">Elegantes y sofisticados</h3>
             <span class="fragancia-card__badge fragancia-card__badge--exoticos">Exóticos</span>
             <p class="fragancia-card__text">Composiciones refinadas que aportan delicadeza y distinción, elevando la experiencia sensorial del espacio.</p>
+            <span class="fragancia-card__cta">Ver fragancias <span aria-hidden="true">&rarr;</span></span>
           </div>
-        </div>
-        <div class="fragancia-card" data-animate="fade-up" data-delay="0.1">
+        </a>
+        <a href="catalogo.html?categoria=citricos" class="fragancia-card fragancia-card--link" data-animate="fade-up" data-delay="0.1">
           <div class="fragancia-card__img">
             <img src="images/cat-citricos.webp" alt="Energía y frescura" class="fragancia-card__img-asset">
           </div>
@@ -238,9 +242,10 @@
             <h3 class="fragancia-card__title">Energía y frescura</h3>
             <span class="fragancia-card__badge fragancia-card__badge--citricos">Cítricos</span>
             <p class="fragancia-card__text">Esencias vibrantes que llenan el entorno de dinamismo y vitalidad, evocan sensación de actividad y renovación.</p>
+            <span class="fragancia-card__cta">Ver fragancias <span aria-hidden="true">&rarr;</span></span>
           </div>
-        </div>
-        <div class="fragancia-card" data-animate="fade-up" data-delay="0.2">
+        </a>
+        <a href="catalogo.html?categoria=destinos" class="fragancia-card fragancia-card--link" data-animate="fade-up" data-delay="0.2">
           <div class="fragancia-card__img">
             <img src="images/cat-suaves.webp" alt="Destinos aromáticos" class="fragancia-card__img-asset">
           </div>
@@ -248,8 +253,9 @@
             <h3 class="fragancia-card__title">Destinos aromáticos</h3>
             <span class="fragancia-card__badge fragancia-card__badge--suaves">Suaves</span>
             <p class="fragancia-card__text">Diseñados para inspirar y conectar con distintos rincones del mundo en una experiencia única.</p>
+            <span class="fragancia-card__cta">Ver fragancias <span aria-hidden="true">&rarr;</span></span>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -359,6 +365,10 @@
               <label for="email">Correo electrónico</label>
               <input type="email" id="email" name="email" required>
             </div>
+          </div>
+          <div class="form__group">
+            <label for="telefono">Número de teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+502 0000 0000" required>
           </div>
           <div class="form__group">
             <label for="producto">Producto de interés <span class="form__hint">(opcional)</span></label>

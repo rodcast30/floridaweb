@@ -417,13 +417,14 @@ if (catalogoControls) {
   const allCards = document.querySelectorAll('.aroma-card');
 
   let currentFilter = 'all';
+  let currentCategory = null;
 
   function applyFilters() {
     const term = (searchInput.value || '').trim().toLowerCase();
     let visibleCount = 0;
 
     // Section visibility based on filter
-    if (currentFilter === 'aerosoles') {
+    if (currentFilter === 'aerosoles' || currentCategory) {
       aerosolesSection.classList.remove('catalogo-section--hidden');
       tapetesSection.classList.add('catalogo-section--hidden');
     } else if (currentFilter === 'tapetes') {
@@ -437,12 +438,21 @@ if (catalogoControls) {
     // Card-level search
     allCards.forEach(card => {
       const inHiddenSection =
-        (currentFilter === 'aerosoles' && tapetesSection.contains(card)) ||
+        ((currentFilter === 'aerosoles' || currentCategory) && tapetesSection.contains(card)) ||
         (currentFilter === 'tapetes' && aerosolesSection.contains(card));
 
       if (inHiddenSection) {
         card.classList.add('aroma-card--hidden');
         return;
+      }
+
+      // Category filter
+      if (currentCategory) {
+        const parentCat = card.closest('.catalogo__category');
+        if (parentCat && parentCat.dataset.cat !== currentCategory) {
+          card.classList.add('aroma-card--hidden');
+          return;
+        }
       }
 
       if (!term) {
@@ -474,12 +484,37 @@ if (catalogoControls) {
       filters.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       currentFilter = btn.dataset.filter;
+      currentCategory = null;
+      // Clear URL param when manually filtering
+      if (history.replaceState) {
+        const url = new URL(window.location.href);
+        url.searchParams.delete('categoria');
+        history.replaceState(null, '', url.toString());
+      }
       applyFilters();
     });
   });
 
   if (searchInput) {
     searchInput.addEventListener('input', applyFilters);
+  }
+
+  // Read ?categoria= from URL and pre-filter
+  const urlCategoria = new URLSearchParams(window.location.search).get('categoria');
+  const validCats = ['herbales', 'frescos', 'frutales', 'exoticos', 'citricos', 'destinos'];
+  if (urlCategoria && validCats.includes(urlCategoria)) {
+    currentCategory = urlCategoria;
+    // Activate aerosoles filter button visually
+    filters.forEach(b => {
+      b.classList.toggle('active', b.dataset.filter === 'aerosoles');
+    });
+    currentFilter = 'aerosoles';
+    applyFilters();
+    // Smooth scroll to the active category
+    setTimeout(() => {
+      const targetCat = document.querySelector('.catalogo__category[data-cat="' + urlCategoria + '"]');
+      if (targetCat) targetCat.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 200);
   }
 }
 
