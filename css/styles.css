@@ -910,8 +910,18 @@ img { max-width: 100%; display: block; }
 }
 
 .aroma-card__intensity {
-  display: flex;
-  gap: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.aroma-card__intensity::before {
+  content: 'Intensidad';
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--gray);
+  letter-spacing: 0.02em;
+  margin-right: 4px;
 }
 
 .aroma-card__intensity span {
@@ -977,16 +987,20 @@ img { max-width: 100%; display: block; }
   text-align: center;
 }
 
-.valor-icon__circle {
+.valor-icon__svg {
   width: 56px;
   height: 56px;
-  border-radius: 50%;
-  background: var(--orange);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
-  box-shadow: 0 6px 18px rgba(232, 135, 43, 0.25);
+  color: var(--navy);
+  background: #f1f3f6;
+  border-radius: 12px;
+}
+
+.valor-icon__svg svg {
+  width: 34px;
+  height: 34px;
 }
 
 .valor-icon strong {
@@ -1805,7 +1819,8 @@ body.modal-open { overflow: hidden; }
   .nosotros__pillars { gap: 2rem; margin-bottom: 3rem; }
   .pillar h3 { font-size: 1.25rem; }
   .valores-icons { gap: 1.25rem; }
-  .valor-icon__circle { width: 48px; height: 48px; font-size: 1.2rem; }
+  .valor-icon__svg { width: 48px; height: 48px; }
+  .valor-icon__svg svg { width: 28px; height: 28px; }
   .nosotros__backed { margin-top: 3rem; padding-top: 2rem; }
   .nosotros__backed-logo { height: 38px; }
 
