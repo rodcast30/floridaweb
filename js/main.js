@@ -208,7 +208,7 @@ if (productModal) {
     modalVisual.innerHTML = '';
     resetZoom();
     if (card.classList.contains('aroma-card--tapete')) {
-      const tap = card.querySelector('.tapete-visual').cloneNode(true);
+      const tap = (card.querySelector('.tapete-photo') || card.querySelector('.tapete-visual')).cloneNode(true);
       modalVisual.appendChild(tap);
       modalVisual.classList.add('product-modal__visual--tapete');
     } else {
