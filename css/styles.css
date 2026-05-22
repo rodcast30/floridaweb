@@ -68,6 +68,11 @@ img { max-width: 100%; display: block; }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
+.accent-bold {
+  font-weight: 800;
+  color: var(--navy);
+}
+
 .accent-italic {
   font-family: var(--font-accent);
   font-weight: 900;
