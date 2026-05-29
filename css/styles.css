@@ -1091,7 +1091,12 @@ img { max-width: 100%; display: block; }
 @media (max-width: 900px) {
   .mvp__row--top, .mvp__row--bottom { grid-template-columns: 1fr; }
   .mvp__vision { border-right: 0; padding-right: 0; padding-bottom: 1.5rem; border-bottom: 1px solid #d4d8e0; }
-  .mvp__minis { max-width: 420px; }
+  .mvp__minis { max-width: 360px; margin: 0 auto; }
+}
+
+@media (max-width: 480px) {
+  .mvp__minis { max-width: 280px; gap: 0.5rem; }
+  .mvp__mini-col { gap: 0.5rem; }
 }
 
 .nosotros__backed {
@@ -1858,7 +1863,7 @@ body.modal-open { overflow: hidden; }
   .hero__tag { font-size: 0.95rem; }
   .hero__title-accent { font-size: clamp(3.1rem, 16vw, 4.2rem); }
   .hero__title-sub { font-size: clamp(1.7rem, 8vw, 2.4rem); }
-  .hero__collage { max-width: min(85vw, 320px); gap: 0.6rem; }
+  .hero__collage { max-width: min(78vw, 280px); gap: 0.5rem; aspect-ratio: 1.15 / 1; }
   .hero__collage > div { border-radius: 14px; }
   .hero__pill { margin-bottom: 1.5rem; padding: 0.7rem 1.1rem; }
   .hero__pill .hero__subtitle { font-size: 0.88rem; }
