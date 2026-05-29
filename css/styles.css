@@ -621,21 +621,32 @@ img { max-width: 100%; display: block; }
   flex-shrink: 0;
 }
 
-/* ===== FRAGANCIAS GRID ===== */
+/* ===== FRAGANCIAS GRID (estilo prototipo: flat, sin caja) ===== */
 .fragancias__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  column-gap: clamp(1.6rem, 3.2vw, 2.6rem);
+  row-gap: clamp(1.6rem, 3vw, 2.4rem);
 }
 
 .fragancia-card {
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  transition: transform var(--transition), box-shadow var(--transition);
+  background: transparent;
+  transition: transform var(--transition);
+  position: relative;
 }
 
-.fragancia-card:hover { transform: translateY(-6px); }
+.fragancia-card:hover { transform: translateY(-4px); }
+
+/* Separadores verticales entre columnas (excepto la 3a) */
+.fragancia-card:not(:nth-child(3n))::after {
+  content: '';
+  position: absolute;
+  top: 0.4rem;
+  bottom: 0.4rem;
+  right: calc(clamp(1.6rem, 3.2vw, 2.6rem) / -2);
+  width: 1px;
+  background: #d4d8e0;
+}
 
 /* Clickable card variant -> links to filtered catalog */
 .fragancia-card--link {
@@ -643,18 +654,6 @@ img { max-width: 100%; display: block; }
   text-decoration: none;
   color: inherit;
   cursor: pointer;
-  position: relative;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.05);
-}
-
-.fragancia-card--link:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 18px 44px rgba(0,0,0,0.14);
-}
-
-.fragancia-card--link:active {
-  transform: translateY(-2px) scale(0.99);
-  transition: transform 0.1s ease;
 }
 
 .fragancia-card--link:focus-visible {
@@ -662,29 +661,17 @@ img { max-width: 100%; display: block; }
   outline-offset: 4px;
 }
 
-.fragancia-card__cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin-top: 0.9rem;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  color: var(--navy);
-  transition: gap var(--transition);
-}
-
-.fragancia-card--link:hover .fragancia-card__cta {
-  gap: 0.7rem;
-}
+/* CTA legacy oculto */
+.fragancia-card__cta { display: none; }
 
 .fragancia-card__img {
-  height: 180px;
+  height: clamp(110px, 12vw, 150px);
   overflow: hidden;
-  background: linear-gradient(135deg, #e8e0d4, #d4c8b8);
   display: flex;
   align-items: center;
   justify-content: center;
+  border-bottom: 4px solid var(--navy);
+  margin-bottom: 0.9rem;
 }
 
 .fragancia-card__img-asset {
@@ -699,36 +686,49 @@ img { max-width: 100%; display: block; }
   transform: scale(1.04);
 }
 
-.fragancia-card__body { padding: 1.5rem; }
+.fragancia-card__body { padding: 0; }
 
 .fragancia-card__title {
-  font-size: 1.1rem;
+  font-size: clamp(1.15rem, 1.6vw, 1.4rem);
   font-weight: 600;
   color: var(--navy);
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.45rem;
+  line-height: 1.25;
+}
+
+.fragancia-card__title-italic {
+  font-style: italic;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.fragancia-card__text {
+  font-size: clamp(0.85rem, 1vw, 0.95rem);
+  color: var(--gray);
+  line-height: 1.55;
+  margin-bottom: 0.8rem;
 }
 
 .fragancia-card__badge {
-  display: inline-block;
-  padding: 0.2rem 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.32rem 0.85rem 0.32rem 0.6rem;
   border-radius: 100px;
-  font-size: 0.7rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  color: var(--white);
-  margin-bottom: 0.5rem;
+  color: #fff;
+  background: #2ec4b6;
+  letter-spacing: 0.01em;
 }
 
-.fragancia-card__badge--herbales { background: #6b8e23; }
-.fragancia-card__badge--frescos { background: #2e8b8b; }
-.fragancia-card__badge--frutales { background: #cd5c5c; }
-.fragancia-card__badge--exoticos { background: #8b5cf6; }
-.fragancia-card__badge--citricos { background: #e8872b; }
-.fragancia-card__badge--suaves { background: #6b7280; }
-
-.fragancia-card__text {
-  font-size: 0.88rem;
-  color: var(--gray);
-  line-height: 1.6;
+.fragancia-card__badge::before {
+  content: '';
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #f0c419;
+  flex-shrink: 0;
 }
 
 /* Category placeholder images */
@@ -1720,6 +1720,8 @@ body.modal-open { overflow: hidden; }
   .section { padding: 5rem 0; }
 
   .fragancias__grid { grid-template-columns: repeat(2, 1fr); }
+  .fragancia-card:not(:nth-child(3n))::after { display: none; }
+  .fragancia-card:not(:nth-child(2n))::after { display: block; }
   .catalogo__products-grid { grid-template-columns: repeat(2, 1fr); }
   .contacto__grid { grid-template-columns: 1fr; gap: 2rem; }
 
@@ -1820,6 +1822,7 @@ body.modal-open { overflow: hidden; }
   .producto-card__title { font-size: 1.3rem; }
 
   .fragancias__grid { grid-template-columns: 1fr; gap: 1.25rem; }
+  .fragancia-card::after { display: none !important; }
 
   .catalogo__products-grid { grid-template-columns: 1fr; gap: 1.5rem; }
   .catalogo__cat-title { font-size: 1.6rem; margin-bottom: 1.5rem; }
@@ -1881,8 +1884,8 @@ body.modal-open { overflow: hidden; }
   .producto-card__body { padding: 1.25rem; }
   .producto-card__tags li { font-size: 0.72rem; padding: 0.3rem 0.7rem; }
 
-  .fragancia-card__img { height: 160px; }
-  .fragancia-card__body { padding: 1.25rem; }
+  .fragancia-card__img { height: 140px; }
+  .fragancia-card__body { padding: 0; }
 
   .aroma-card { padding: 1.25rem; }
   .aroma-card__visual { height: 170px; }
