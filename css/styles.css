@@ -641,6 +641,9 @@ img { max-width: 100%; display: block; }
   background: transparent;
   transition: transform var(--transition);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .fragancia-card:hover { transform: translateY(-4px); }
@@ -658,7 +661,7 @@ img { max-width: 100%; display: block; }
 
 /* Clickable card variant -> links to filtered catalog */
 .fragancia-card--link {
-  display: block;
+  display: flex;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
@@ -697,7 +700,12 @@ img { max-width: 100%; display: block; }
   transform: scale(1.04);
 }
 
-.fragancia-card__body { padding: 0; }
+.fragancia-card__body {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
 
 .fragancia-card__title {
   font-size: clamp(1.15rem, 1.6vw, 1.4rem);
@@ -731,6 +739,11 @@ img { max-width: 100%; display: block; }
   color: #fff;
   background: #2ec4b6;
   letter-spacing: 0.01em;
+}
+
+.fragancia-card__body .fragancia-card__badge {
+  align-self: flex-start;
+  margin-top: auto;
 }
 
 .fragancia-card__badge::before {
