@@ -949,7 +949,7 @@ img { max-width: 100%; display: block; }
 /* ===== NOSOTROS ===== */
 .nosotros__historia {
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
+  grid-template-columns: 1.2fr 1fr;
   gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
   margin-bottom: 5rem;
@@ -1059,52 +1059,26 @@ img { max-width: 100%; display: block; }
 .nosotros__collage-item:nth-child(2) { grid-column: 2; }
 .nosotros__collage-item:nth-child(3) { grid-column: 2; }
 
-/* Variante: 3 portrait alineadas (prototipo Nuestra historia) */
-.nosotros__collage--historia {
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  aspect-ratio: auto;
-  gap: 0.75rem;
-  max-width: 100%;
-  margin: 0;
-}
-.nosotros__collage--historia .nosotros__collage-item {
-  aspect-ratio: 2 / 3;
-  border-radius: 22px;
-  grid-row: auto !important;
-  grid-column: auto !important;
-}
-
 /* Misión / Visión / Propósito layout (prototipo) */
-.mvp { margin-bottom: 4rem; display: flex; flex-direction: column; gap: clamp(1.5rem, 3vw, 2.5rem); }
+.mvp { margin-bottom: 4rem; display: flex; flex-direction: column; gap: 2.5rem; }
 
 .mvp h3 {
-  font-size: clamp(2rem, 3.6vw, 3rem);
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
   font-weight: 400;
   margin-bottom: 1rem;
   color: var(--navy);
-  line-height: 1.15;
-  letter-spacing: -0.01em;
+  line-height: 1.1;
 }
 
 .mvp p {
   color: var(--navy);
-  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
-  line-height: 1.55;
-  max-width: 36ch;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .mvp__row { display: grid; gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
-.mvp__row--top { grid-template-columns: 1fr 1.7fr; align-items: start; }
-.mvp__row--bottom { grid-template-columns: 0.95fr 1fr 1fr; align-items: start; }
-
-.mvp__mision, .mvp__vision, .mvp__proposito { padding-top: 0.25rem; }
-.mvp__daiso {
-  display: inline-block;
-  font-weight: 700;
-  color: var(--navy);
-  letter-spacing: 0.01em;
-}
+.mvp__row--top { grid-template-columns: 1fr 1.5fr; align-items: center; }
+.mvp__row--bottom { grid-template-columns: 0.9fr 1fr 1fr; }
 
 .mvp__hero-img {
   border-radius: 20px;
@@ -1132,12 +1106,7 @@ img { max-width: 100%; display: block; }
 @media (max-width: 900px) {
   .mvp__row--top, .mvp__row--bottom { grid-template-columns: 1fr; }
   .mvp__vision { border-right: 0; padding-right: 0; padding-bottom: 1.5rem; border-bottom: 1px solid #d4d8e0; }
-  .mvp__minis { max-width: 360px; margin: 0 auto; }
-}
-
-@media (max-width: 480px) {
-  .mvp__minis { max-width: 280px; gap: 0.5rem; }
-  .mvp__mini-col { gap: 0.5rem; }
+  .mvp__minis { max-width: 420px; }
 }
 
 .nosotros__backed {
