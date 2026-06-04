@@ -264,7 +264,7 @@ img { max-width: 100%; display: block; }
   background: var(--navy);
   color: var(--white);
   padding: 1rem 1.75rem;
-  border-radius: 16px;
+  border-radius: 8px;
   margin-bottom: 1.75rem;
   opacity: 0;
   max-width: 100%;
