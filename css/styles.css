@@ -271,12 +271,13 @@ img { max-width: 100%; display: block; }
 }
 
 .hero__pill .hero__subtitle {
-  font-size: 1.1rem;
+  font-size: clamp(0.5rem, 1.85vw, 1.05rem);
   color: rgba(255, 255, 255, 0.92);
   margin: 0;
   line-height: 1.4;
   max-width: none;
   opacity: 1;
+  white-space: nowrap;
 }
 
 /* Hero badge */
@@ -334,7 +335,7 @@ img { max-width: 100%; display: block; }
   font-size: clamp(1.6rem, 2.6vw, 2.4rem);
   font-weight: 600;
   color: var(--navy);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0;
   opacity: 0;
 }
 
@@ -352,7 +353,7 @@ img { max-width: 100%; display: block; }
   line-height: 0.9;
   letter-spacing: -0.01em;
   display: block;
-  margin-top: -0.08em;
+  margin-top: -0.22em;
   margin-bottom: 0.08em;
 }
 
@@ -674,7 +675,7 @@ img { max-width: 100%; display: block; }
 .fragancia-card__img {
   position: relative;
   width: 100%;
-  aspect-ratio: 5 / 2;
+  aspect-ratio: 9 / 2;
   overflow: hidden;
   display: block;
   border-bottom: 4px solid var(--navy);
@@ -686,7 +687,7 @@ img { max-width: 100%; display: block; }
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   display: block;
   transition: transform var(--transition);
@@ -1797,8 +1798,7 @@ body.modal-open { overflow: hidden; }
   .hero__title { margin-bottom: 1.5rem; }
   .hero__title-accent { font-size: clamp(3.6rem, 15vw, 5.4rem); }
   .hero__title-sub { font-size: clamp(1.9rem, 7.6vw, 2.9rem); }
-  .hero__pill { padding: 0.85rem 1.35rem; }
-  .hero__pill .hero__subtitle { font-size: 1rem; }
+  .hero__pill { padding: 0.8rem 1rem; }
   .hero__collage { max-width: min(85vw, 380px); }
 
   .hero__stats { padding: 1.75rem 0; }
@@ -1879,8 +1879,7 @@ body.modal-open { overflow: hidden; }
   .hero__title-sub { font-size: clamp(1.7rem, 8vw, 2.4rem); }
   .hero__collage { max-width: min(78vw, 280px); gap: 0.5rem; aspect-ratio: 1.15 / 1; }
   .hero__collage > div { border-radius: 14px; }
-  .hero__pill { margin-bottom: 1.5rem; padding: 0.8rem 1.2rem; }
-  .hero__pill .hero__subtitle { font-size: 0.95rem; }
+  .hero__pill { margin-bottom: 1.5rem; padding: 0.75rem 0.85rem; }
   .hero__badge { font-size: 0.85rem; }
 
   .hero__stats { padding: 1.5rem 0; }
