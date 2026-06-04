@@ -1097,6 +1097,7 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
   background: var(--off-white);
   aspect-ratio: 1 / 1;
+  box-shadow: 0 10px 24px rgba(27, 58, 92, 0.12);
 }
 .mvp__mini--urinal {
   aspect-ratio: auto;
