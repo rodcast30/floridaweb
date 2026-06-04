@@ -23,3 +23,5 @@ images/AerosolesFS/
 .proto_pages/
 images/extraidas/
 .audit/
+
+.vercel
